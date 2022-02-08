@@ -8,8 +8,11 @@
 
 body {
   font-family: $open-sans;
+  font-size: 16px;
   font-weight: 400;
   color: $black;
+  background: #F7F7F7;
+  overflow-x: hidden;
 }
 
 ol, ul {
