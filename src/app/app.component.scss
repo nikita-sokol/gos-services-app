@@ -63,6 +63,75 @@
    margin-bottom: 19px;
 }
 
+// COMPLEX SERVICES
+.complex-services {
+
+}
+.complex-services__block {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.complex-services-item {
+   width: 288px;
+   height: 380px;
+   border-radius: 20px;
+   padding: 20px;
+   background-color: #877DF2;
+   background-repeat: no-repeat;
+   background-position: 50% 98%;
+   margin-bottom: 20px;
+   &_child {
+      background-image: url('/assets/img/content/complex-serv/child.svg');
+   }
+
+   &_pension {
+      background-image: url('/assets/img/content/complex-serv/pension.svg');
+      background-color: #81B9F2;
+   }
+
+   &_name-change {
+      background-image: url('/assets/img/content/complex-serv/name-change.svg');
+      background-color: #DB826C;
+   }
+
+   &_house-constr {
+      background-image: url('/assets/img/content/complex-serv/house-constr.svg');
+      background-color: #EAC267;
+   }
+
+   &_loss-docs {
+      background-image: url('/assets/img/content/complex-serv/loss-docs.svg');
+      background-color: #91C959;
+   }
+
+   &_loss-person {
+      background-image: url('/assets/img/content/complex-serv/loss-person.svg');
+      background-color: #3F3F3F;
+   }
+
+   &_place {
+      background-image: url('/assets/img/content/complex-serv/place.svg');
+      background-color: #59C2C9;
+   }
+
+   &_purchase-house {
+      background-image: url('/assets/img/content/complex-serv/purchase-house.svg');
+      background-color: #AC59C9;
+   }
+
+   &_open-case {
+      background-image: url('/assets/img/content/complex-serv/open-case.svg');
+      background-color: #59C978;
+   }
+}
+.complex-services-item__title {
+   color: $white;
+}
+
+// COMPLEX SERVICES END
+
 // NEWS
 .news {
 
