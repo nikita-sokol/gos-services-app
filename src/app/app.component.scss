@@ -63,6 +63,96 @@
    margin-bottom: 19px;
 }
 
+// EVENTS
+.events {
+
+}
+.events__block {
+   height: 380px;
+   padding: 40px 460px 76px 40px;
+   background: #CBC9E2;
+   border-radius: 20px;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+}
+.events__title {
+   margin-bottom: 20px;
+   color: $white;
+}
+.events__text {
+   color: $white;
+}
+.events__btn {
+   margin-top: auto;
+}
+
+.slider {
+   position: relative;
+}
+.slider__slide {
+   position: relative;
+   margin-bottom: 20px;
+   background-repeat: no-repeat;
+   background-position: 91% 50%;
+   background-size: auto 75%;
+   @each $slide in social-navigator, debts, orvi-symptoms, stop-covid, vaccine, worker-info, military-commissariat, appeal, technical-service, qr-code, working-mode, electronic-signature, doctor, school-portal, self-employee, young-family, social-support, suburbs, medical-staff, covid-testing, mfc-work, covid-facts, large-family, esia, hot-tine, medical-work, bankrupt, gasification, vaccination-appointment {
+      &_#{$slide} {
+         background-image: url('/assets/img/content/event-slider/#{$slide}.svg');
+      }
+   }
+}
+
+.slider__pagins {
+   position: absolute;
+   left: 40px;
+   bottom: 30px;
+   display: flex;
+}
+.slider__pagin {
+   transition: $base-duration;
+   width: 7px;
+   height: 7px;
+   border: 1px solid #fff;
+   border-radius: 50%;
+   cursor: pointer;
+   &:not(:first-child) {
+      margin-left: 5px;
+   }
+}
+.slider__pagin_active {
+   background: #000;
+}
+.slider__arrow {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   width: 40px;
+   height: 40px;
+   background-color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 20px;
+   cursor: pointer;
+   span {
+      width: 24px;
+      height: 12px;
+      background-image: url('/assets/img/content/event-slider/arrow.svg');
+   }
+}
+.slider__arrow_left {
+   left: -60px;
+}
+.slider__arrow_right {
+   right: -60px;
+   span {
+      transform: rotate(180deg);
+   }
+}
+// EVENTS END
+
 // COMPLEX SERVICES
 .complex-services {
 
@@ -309,27 +399,6 @@
    line-height: 1.35;
    text-align: center;
    color: $black;
-}
-.btn {
-   color: $scarlet;
-   text-transform: uppercase;
-   width: 210px;
-   height: 34px;
-   background: transparent;
-   border: 1px solid $scarlet;
-   border-radius: 17px;
-   font-weight: 700;
-   font-size: 12px;
-   line-height: 1.333;
-   cursor: pointer;
-   transition: $base-duration;
-   &:active {
-      background-color: $scarlet;
-      color: $white;
-   }
-   span {
-      font-weight: inherit;
-   }
 }
 // SUPPORT END
 

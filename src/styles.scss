@@ -26,3 +26,32 @@ h5 {
 }
 
 
+
+.btn {
+   text-transform: uppercase;
+   width: 210px;
+   height: 34px;
+   border-radius: 17px;
+   font-weight: 700;
+   font-size: 12px;
+   line-height: 1.333;
+   cursor: pointer;
+   transition: $base-duration;
+   &:active {
+      background-color: $scarlet;
+      color: $white;
+   }
+   span {
+      font-weight: inherit;
+   }
+   &_bgcolor_transpar {
+      background: transparent;
+      color: $scarlet;
+      border: 1px solid $scarlet;
+   }
+   &_bgcolor_scarlet {
+      background: $scarlet;
+      color: $white;
+      border: 1px solid $scarlet;
+   }
+}
