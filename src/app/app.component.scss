@@ -153,6 +153,87 @@
 }
 // EVENTS END
 
+// SERVICES
+.services {
+
+}
+.services__block {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+.services-item {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   width: 288px;
+   height: 380px;
+   background-color: #B9CADD;
+   border-radius: 20px;
+   &_school {
+      background-image: url('/assets/img/content/services/school.svg');
+      background-repeat: no-repeat;
+      background-position: 30%;
+   }
+}
+.services-item__block-text {
+   padding: 20px 20px 0;
+}
+.services-item__title {
+   color: $white;
+}
+.services-item__text {
+   color: $white;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 1.33;
+   color: $white;
+   margin-top: 10px;
+}
+.services-item__img {
+   text-align: center;
+   &_small {
+      height: 57px;
+      img {
+         height: 100%;
+      }
+   }
+}
+
+.services__label {
+   display: flex;
+   flex-direction: column;
+   padding: 0 20px;
+   &_bottom {
+      margin: auto 0 20px;
+   }
+}
+.services__input {
+   width: 100%;
+   height: 40px;
+   padding: 0 20px;
+
+   background: #FFFFFF;
+   border-radius: 25px;
+   &:not(:first-child) {
+      margin-top: 10px;
+   }
+}
+.services__link {
+   margin-top: 10px;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 1.33;
+   text-decoration: underline;
+   color: $white;
+}
+.services__btn {
+   height: 40px;
+   width: 100%;
+   border-radius: 25px;
+}
+// SERVICES END
+
 // COMPLEX SERVICES
 .complex-services {
 
@@ -170,9 +251,10 @@
    padding: 20px;
    background-color: #877DF2;
    background-repeat: no-repeat;
-   background-position: 50% 98%;
+   background-position: 50% 80%;
    margin-bottom: 20px;
    &_child {
+      background-position: 50% 95%;
       background-image: url('/assets/img/content/complex-serv/child.svg');
    }
 
@@ -192,26 +274,31 @@
    }
 
    &_loss-docs {
+      background-position: 50% 74%;
       background-image: url('/assets/img/content/complex-serv/loss-docs.svg');
       background-color: #91C959;
    }
 
    &_loss-person {
+      background-position: 50% 74%;
       background-image: url('/assets/img/content/complex-serv/loss-person.svg');
       background-color: #3F3F3F;
    }
 
    &_place {
+      background-position: 50% 74%;
       background-image: url('/assets/img/content/complex-serv/place.svg');
       background-color: #59C2C9;
    }
 
    &_purchase-house {
+      background-position: 50% 78%;
       background-image: url('/assets/img/content/complex-serv/purchase-house.svg');
       background-color: #AC59C9;
    }
 
    &_open-case {
+      background-position: 50% 85%;
       background-image: url('/assets/img/content/complex-serv/open-case.svg');
       background-color: #59C978;
    }
