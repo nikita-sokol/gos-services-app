@@ -5,21 +5,9 @@
        <a href="#" class="news__all-news">Все новости</a>
      </div>
      <div class="news__block">
-       <div class="news-item">
-         <div class="news-item__date">Сегодня, 11:10</div>
-         <div class="news-item__text">Более 5,7 тыс звонков поступило в ЕДДС Щелкова за прошлую неделю</div>
-       </div>
-       <div class="news-item">
-         <div class="news-item__date">Сегодня, 11:10</div>
-         <div class="news-item__text">1 813 случаев заболевания коронавирусом выявили в Подмосковье за сутки</div>
-       </div>
-       <div class="news-item">
-         <div class="news-item__date">Сегодня, 11:10</div>
-         <div class="news-item__text">Еще 1858 человек вылечились от Covid‑19 в Подмосковье</div>
-       </div>
-       <div class="news-item">
-         <div class="news-item__date">Сегодня, 11:10</div>
-         <div class="news-item__text">Почти 300 человек привились от Covid‑19 в амбулатории деревни Федюково Подольска с марта</div>
+       <div class="news-item" *ngFor="let news of newsData">
+         <div class="news-item__date">{{news.date}}</div>
+         <div class="news-item__text">{{news.text}}</div>
        </div>
      </div>
    </div>
