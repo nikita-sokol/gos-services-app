@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import './styles/layout';
 
-.container {
-   margin: auto;
-   width: 1200px;
+.wrap {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 1240px;
+   padding: 0 20px;
 }
 
 h2 {

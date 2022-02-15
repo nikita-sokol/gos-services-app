@@ -3,10 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HeaderNavComponent } from './components/header-nav/header-nav.component';
+import { HomeEventsComponent } from './pages/home/home-events/home-events.component';
+import { HomeServicesComponent } from './pages/home/home-services/home-services.component';
+import { HomeComplexServicesComponent } from './pages/home/home-complex-services/home-complex-services.component';
+import { HomeNewsComponent } from './pages/home/home-news/home-news.component';
+import { HomeMobAppComponent } from './pages/home/home-mob-app/home-mob-app.component';
+import { HomeSupportComponent } from './pages/home/home-support/home-support.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderNavComponent,
+    HomeEventsComponent,
+    HomeServicesComponent,
+    HomeComplexServicesComponent,
+    HomeNewsComponent,
+    HomeMobAppComponent,
+    HomeSupportComponent
   ],
   imports: [
     BrowserModule,

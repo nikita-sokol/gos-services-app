@@ -1,0 +1,89 @@
+@import 'src/styles/variables';
+.mob-app {
+}
+.mob-app__title {
+   margin-bottom: 19px;
+}
+.mob-app__block {
+   color: $white;
+   background: url('/assets/img/home_page/mob-app/bg.svg') no-repeat center;
+   background-size: 100%;
+   padding: 40px;
+   padding-right: 638px;
+   height: 385px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+
+.mob-app__icon {
+   width: 40px;
+   height: 40px;
+   background: url('/assets/img/home_page/mob-app/icon.svg');
+   background-size: 100%;
+   margin-bottom: 20px;
+}
+
+
+.mob-app__title {
+   margin-bottom: 10px;
+}
+
+
+.mob-app__text {
+   font-size: 16px;
+   line-height: 1.6;
+   font-weight: normal;
+   margin-bottom: 17px;
+}
+
+
+.store {
+   width: 242px;
+   transform: translateX(-3px);
+   margin-top: auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.store__qr {
+   background: url('/assets/img/home_page/mob-app/qr.png');
+   background-size: cover;
+   width: 86px;
+   height: 86px;
+}
+.store__buttons {
+   display: flex;
+   flex-direction: column;
+   align-self: stretch;
+   justify-content: space-between;
+}
+.store-btn {
+   color: $black;
+   width: 130px;
+   height: 37px;
+   background-color: #fff;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+   padding-left: 10px;
+}
+.store-btn__icon {
+   width: 24px;
+   height: 24px;
+   &_google {
+      background: url('/assets/img/home_page/mob-app/google-play.svg') center no-repeat;
+      background-size: auto 100%;
+   }
+   &_appstore {
+      background: url('/assets/img/home_page/mob-app/app-store.svg');
+      background-size: cover;
+   }
+}
+.store-btn__text {
+   margin-left: 10px;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 1.166;
+}

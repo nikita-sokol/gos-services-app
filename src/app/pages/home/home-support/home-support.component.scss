@@ -1,0 +1,24 @@
+@import 'src/styles/variables';
+.support {
+}
+.support__title {
+   margin-bottom: 19px;
+}
+.support__block {
+   border-radius: 20px;
+   padding: 24px 0;
+   background: #fff;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.support__btn {
+   margin-bottom: 24px;
+}
+.support__mobile {
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 1.35;
+   text-align: center;
+   color: $black;
+}

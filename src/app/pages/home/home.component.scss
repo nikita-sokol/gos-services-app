@@ -1,0 +1,16 @@
+@import 'src/styles/variables';
+
+.header {
+   padding: 26px 0 20px;
+   background: #fff;
+}
+
+.page-body {
+   padding: 58px 0 224px;
+}
+.page-body__block {
+   &:not(:last-child) {
+      margin-bottom: 58px;
+   }
+}
+
