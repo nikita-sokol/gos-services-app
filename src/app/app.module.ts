@@ -11,6 +11,7 @@ import { HomeComplexServicesComponent } from './pages/home/home-complex-services
 import { HomeNewsComponent } from './pages/home/home-news/home-news.component';
 import { HomeMobAppComponent } from './pages/home/home-mob-app/home-mob-app.component';
 import { HomeSupportComponent } from './pages/home/home-support/home-support.component';
+import { SliderEventsComponent } from './pages/home/home-events/slider-events/slider-events.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeSupportComponent } from './pages/home/home-support/home-support.com
     HomeComplexServicesComponent,
     HomeNewsComponent,
     HomeMobAppComponent,
-    HomeSupportComponent
+    HomeSupportComponent,
+    SliderEventsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+<div class="slider">
+   <div class="slider__slides">
+      <div class="slider__slide slide" *ngFor="let slide of slides; let id = index"
+         [style.backgroundImage]="'url(/assets/img/home_page/events-slider/slides/' + slide.slideName + '.svg)'"
+         [class]="slide.slideName ? 'slide_' + slide.slideName : ''"
+         [ngClass]="{
+            'slide_current-slide': id == currentSlideID, 
+            'slide_prev-slide': slideChangeCondition('prev',id), 
+            'slide_next-slide': slideChangeCondition('next',id)}"
+            >
+         <h2 class="slide__title">{{slide.title}}</h2>
+         <div class="slide__text">{{slide.text}}</div>
+         <button class="btn btn_bgcolor_scarlet slide__btn">
+            <span>{{slide.btnText}}</span>
+         </button>
+      </div>
+   </div>
+
+   <div class="slider__arrow slider__arrow_prev" (click)="this.changeCurrentSlide('prev')">
+      <span></span>
+   </div>
+   <div class="slider__arrow slider__arrow_next" (click)="this.changeCurrentSlide('next')">
+      <span></span>
+   </div>
+   <div class="slider__pagins">
+      <span class="slider__pagin" 
+         *ngFor="let slide of slides; let id = index" 
+         [ngClass]="{'_active': true}"
+         (click)="pagination(id)"
+         ></span>
+   </div>
+</div>
