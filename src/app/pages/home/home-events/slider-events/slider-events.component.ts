@@ -30,21 +30,30 @@ export class SliderEventsComponent implements OnInit {
         this.currentSlideID === this.lastSlideID ? 0 : this.currentSlideID + 1;
     }
 
-    // this.prevSlideID =
-    //   this.currentSlideID === 0 ? this.lastSlideID : this.currentSlideID - 1;
-    // this.nextSlideID =
-    //   this.currentSlideID === this.lastSlideID ? 0 : this.currentSlideID + 1;
+    this.prevSlideID =
+      this.currentSlideID === 0 ? this.lastSlideID : this.currentSlideID - 1;
+    this.nextSlideID =
+      this.currentSlideID === this.lastSlideID ? 0 : this.currentSlideID + 1;
   }
 
   pagination(id: any) {
     if (id == this.currentSlideID) return;
 
+    // если все prev или next
     this.currentSlideID = id;
         
-    // this.prevSlideID =
-    //   this.currentSlideID === 0 ? this.lastSlideID : this.currentSlideID - 1;
-    // this.nextSlideID =
-    //   this.currentSlideID === this.lastSlideID ? 0 : this.currentSlideID + 1;
+    this.prevSlideID =
+      this.currentSlideID === 0 ? this.lastSlideID : this.currentSlideID - 1;
+    this.nextSlideID =
+      this.currentSlideID === this.lastSlideID ? 0 : this.currentSlideID + 1;
+  
+    // второй вариант
+    //// this.nextSlideID = id;
+    //// setTimeout(() => {
+    ////   this.currentSlideID = id;
+    ////   this.prevSlideID = this.currentSlideID === 0 ? this.lastSlideID : this.currentSlideID - 1;
+    ////   this.nextSlideID = this.currentSlideID === this.lastSlideID ? 0 : this.currentSlideID + 1;
+    //// }, 100)
   }
 
   slideChangeCondition(mode: any, id: any) {

@@ -77,26 +77,28 @@
    flex-wrap: wrap;
    flex-direction: column;
    z-index: 1;
-   $duration: 0.65s;
+   $duration1: .65s;
+   $duration2: .4s;
    
-
-
    &_prev-slide {
-      transition: transform $duration, opacity 0.3s;
+      transition: transform $duration1, opacity $duration2 linear;
       transform: translateX(-103%);
       z-index: 5;
    }
    &_current-slide {
-      transition: transform $duration, opacity 0.3s;
       opacity: 1;
       transform: translateX(0);
-      z-index: 5;
+      z-index: 6;
+      transition: transform $duration1, opacity $duration2 linear;
    }
    &_next-slide {
-      transition: transform $duration, opacity 0.3s;
+      transition: transform $duration1, opacity $duration2 linear;
       transform: translateX(103%);
       z-index: 5;
    }
+   // &_animation {
+   //    transition: all 0s;
+   // }
    
 
 
