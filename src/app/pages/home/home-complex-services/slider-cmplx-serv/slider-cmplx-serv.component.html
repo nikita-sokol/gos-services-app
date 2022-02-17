@@ -1,0 +1,16 @@
+<div class="slider">
+   <div class="slider-container">
+      <div class="slider-track" [ngStyle]="{ 'left': positionTrack + 'px' }">
+         <div class="slide" *ngFor="let slide of slides" [class]="slide.slideName ? 'slide_' + slide.slideName : ''">
+            <h5 class="slide__title">{{slide.title}}</h5>
+         </div>
+      </div>
+   </div>
+
+   <div class="slider-arrow slider-arrow_prev" (click)="chargeTrackPosition('prev')">
+      <span></span>
+   </div>
+   <div class="slider-arrow slider-arrow_next" (click)="chargeTrackPosition('next')">
+      <span></span>
+   </div>
+ </div>

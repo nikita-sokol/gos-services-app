@@ -1,0 +1,109 @@
+@import 'src/styles/variables';
+.slider {
+   position: relative;
+}
+.slider-container {
+   overflow: hidden;
+}
+.slider-track {
+   position: relative;
+   $duration: .65s;
+   display: flex;
+   transition: all $duration;
+}
+
+.slide {
+   flex-basis: 288px;
+   flex-shrink: 0;
+   height: 380px;
+   border-radius: 20px;
+   padding: 20px;
+   background-color: #877DF2;
+   background-repeat: no-repeat;
+   background-position: 50% 80%;
+   margin-right: 16px;
+
+   &__title {
+      color: $white;
+   }
+   
+   &_child {
+      background-position: 50% 95%;
+      background-image: url('/assets/img/home_page/complex-serv/child.svg');
+   }
+
+   &_pension {
+      background-image: url('/assets/img/home_page/complex-serv/pension.svg');
+      background-color: #81B9F2;
+   }
+
+   &_name-change {
+      background-image: url('/assets/img/home_page/complex-serv/name-change.svg');
+      background-color: #DB826C;
+   }
+
+   &_house-constr {
+      background-image: url('/assets/img/home_page/complex-serv/house-constr.svg');
+      background-color: #EAC267;
+   }
+
+   &_loss-docs {
+      background-position: 50% 74%;
+      background-image: url('/assets/img/home_page/complex-serv/loss-docs.svg');
+      background-color: #91C959;
+   }
+
+   &_loss-person {
+      background-position: 50% 74%;
+      background-image: url('/assets/img/home_page/complex-serv/loss-person.svg');
+      background-color: #3F3F3F;
+   }
+
+   &_place {
+      background-position: 50% 74%;
+      background-image: url('/assets/img/home_page/complex-serv/place.svg');
+      background-color: #59C2C9;
+   }
+
+   &_purchase-house {
+      background-position: 50% 78%;
+      background-image: url('/assets/img/home_page/complex-serv/purchase-house.svg');
+      background-color: #AC59C9;
+   }
+
+   &_open-case {
+      background-position: 50% 85%;
+      background-image: url('/assets/img/home_page/complex-serv/open-case.svg');
+      background-color: #59C978;
+   }
+}
+
+.slider-arrow {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   width: 40px;
+   height: 40px;
+   background-color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 20px;
+   cursor: pointer;
+   z-index: 10;
+   span {
+      width: 24px;
+      height: 12px;
+      background-image: url('/assets/img/home_page/events-slider/arrow.svg');
+   }
+   &_prev {
+      left: -60px;
+   }
+   &_next {
+      right: -60px;
+      span {
+         transform: rotate(180deg);
+      }
+   }
+}

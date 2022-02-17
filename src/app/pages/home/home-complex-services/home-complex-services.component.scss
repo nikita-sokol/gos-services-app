@@ -1,75 +1,7 @@
-@import 'src/styles/variables';
+
 .complex-services {
 
 }
 .complex-services__title {
    margin-bottom: 19px;
-}
-.complex-services__block {
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-}
-
-.complex-services-item {
-   width: 288px;
-   height: 380px;
-   border-radius: 20px;
-   padding: 20px;
-   background-color: #877DF2;
-   background-repeat: no-repeat;
-   background-position: 50% 80%;
-   margin-bottom: 20px;
-   &_child {
-      background-position: 50% 95%;
-      background-image: url('/assets/img/home_page/complex-serv/child.svg');
-   }
-
-   &_pension {
-      background-image: url('/assets/img/home_page/complex-serv/pension.svg');
-      background-color: #81B9F2;
-   }
-
-   &_name-change {
-      background-image: url('/assets/img/home_page/complex-serv/name-change.svg');
-      background-color: #DB826C;
-   }
-
-   &_house-constr {
-      background-image: url('/assets/img/home_page/complex-serv/house-constr.svg');
-      background-color: #EAC267;
-   }
-
-   &_loss-docs {
-      background-position: 50% 74%;
-      background-image: url('/assets/img/home_page/complex-serv/loss-docs.svg');
-      background-color: #91C959;
-   }
-
-   &_loss-person {
-      background-position: 50% 74%;
-      background-image: url('/assets/img/home_page/complex-serv/loss-person.svg');
-      background-color: #3F3F3F;
-   }
-
-   &_place {
-      background-position: 50% 74%;
-      background-image: url('/assets/img/home_page/complex-serv/place.svg');
-      background-color: #59C2C9;
-   }
-
-   &_purchase-house {
-      background-position: 50% 78%;
-      background-image: url('/assets/img/home_page/complex-serv/purchase-house.svg');
-      background-color: #AC59C9;
-   }
-
-   &_open-case {
-      background-position: 50% 85%;
-      background-image: url('/assets/img/home_page/complex-serv/open-case.svg');
-      background-color: #59C978;
-   }
-}
-.complex-services-item__title {
-   color: $white;
 }
