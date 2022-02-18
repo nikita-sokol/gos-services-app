@@ -31,8 +31,6 @@ h5 {
 
 .btn {
    text-transform: uppercase;
-   width: 210px;
-   height: 34px;
    border-radius: 17px;
    font-weight: 700;
    font-size: 12px;
@@ -46,6 +44,7 @@ h5 {
    span {
       font-weight: inherit;
    }
+   
    &_bgcolor_transpar {
       background: transparent;
       color: $scarlet;

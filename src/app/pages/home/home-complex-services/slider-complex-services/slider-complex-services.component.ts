@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-slider-cmplx-serv',
-  templateUrl: './slider-cmplx-serv.component.html',
-  styleUrls: ['./slider-cmplx-serv.component.scss']
+  selector: 'app-slider-complex-services',
+  templateUrl: './slider-complex-services.component.html',
+  styleUrls: ['./slider-complex-services.component.scss']
 })
-export class SliderCmplxServComponent implements OnInit {
+export class SliderComplexServicesComponent implements OnInit {
   @Input() slides: any;
   positionTrack = 0;
   widthTrack: any;
@@ -13,6 +13,7 @@ export class SliderCmplxServComponent implements OnInit {
   widthSlide = 288;
   marginSlide = 16;
   minPositionTrack: any;
+  transition = 0.65
 
   constructor() { }
 
@@ -26,12 +27,16 @@ export class SliderCmplxServComponent implements OnInit {
     if (mode === 'prev') {
       if (this.positionTrack < 0) {
         this.positionTrack += this.widthSlide + this.marginSlide;
+      } else {
+        this.positionTrack = this.minPositionTrack;
       }
     }
 
     if (mode === 'next') {
       if (this.positionTrack > this.minPositionTrack) {
         this.positionTrack -= this.widthSlide + this.marginSlide;
+      } else {
+        this.positionTrack = 0;
       }
     }
   }

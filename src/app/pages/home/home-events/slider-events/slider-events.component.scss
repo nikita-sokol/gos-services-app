@@ -42,7 +42,7 @@
       span {
          width: 24px;
          height: 12px;
-         background-image: url('/assets/img/home_page/events-slider/arrow.svg');
+         background-image: url('/assets/img/icons/arrow.svg');
       }
       &_prev {
          left: -60px;
@@ -113,6 +113,8 @@
       font-weight: normal;
    }
    &__btn {
+      width: 210px;
+      height: 34px;
       margin-top: auto;
    }
 

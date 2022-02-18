@@ -21,7 +21,9 @@
    background-color: #877DF2;
    background-repeat: no-repeat;
    background-position: 50% 80%;
-   margin-right: 16px;
+   &:not(:last-child) {
+      margin-right: 16px;
+   }
 
    &__title {
       color: $white;
@@ -95,7 +97,7 @@
    span {
       width: 24px;
       height: 12px;
-      background-image: url('/assets/img/home_page/events-slider/arrow.svg');
+      background-image: url('/assets/img/icons/arrow.svg');
    }
    &_prev {
       left: -60px;
