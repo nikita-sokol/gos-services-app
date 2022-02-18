@@ -1,0 +1,33 @@
+<div class="slider">
+   <div class="slider-container">
+      <div class="slider-track" [ngStyle]="{ 'left': positionTrack + 'px', 'transition': transition+'s' }">
+
+        <form class="slide" *ngFor="let slide of slides" [class]="slide.className ? 'slide_'+ slide.className: ''">
+          <div class="slide__block-text">
+            <h5 class="slide__title">{{slide.title}}</h5>
+            <div class="slide__text">{{slide.text}}</div>
+          </div>
+     
+          <div class="slide__img" *ngIf="slide.imgName" [class]="slide.imgClass ? 'slide__img_'+ slide.imgClass: ''">
+            <img [src]="'/assets/img/home_page/services/'+slide.imgName+'.svg'" alt="">
+          </div>
+
+          <div class="slide__label" *ngIf="slide.label" [class]="slide.label.class ? 'slide__label_' + slide.label.class : ''">
+            <input *ngFor="let input of slide.label.inputs" [type]="input.type" class="slide__input" [class]="input.class ? 'slide__input_'+ input.class: ''" [placeholder]="input.placeholder">
+            <a *ngFor="let link of slide.label.links" [href]="link.href" class="slide__link">{{link.text}}</a>
+          </div>
+     
+          <button class="btn btn_bgcolor_grey slide__btn">
+            <span>{{slide.btnText}}</span>
+          </button>
+        </form>
+      </div>
+   </div>
+
+   <div class="slider-arrow slider-arrow_prev" (click)="chargeTrackPosition('prev')">
+      <span></span>
+   </div>
+   <div class="slider-arrow slider-arrow_next" (click)="chargeTrackPosition('next')">
+      <span></span>
+   </div>
+ </div>
