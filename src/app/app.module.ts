@@ -14,6 +14,8 @@ import { HomeSupportComponent } from './pages/home/home-support/home-support.com
 import { SliderEventsComponent } from './pages/home/home-events/slider-events/slider-events.component';
 import { SliderComplexServicesComponent } from './pages/home/home-complex-services/slider-complex-services/slider-complex-services.component';
 import { SliderServicesComponent } from './pages/home/home-services/slider-services/slider-services.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HeaderNotificationComponent } from './components/header/header-notification/header-notification.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SliderServicesComponent } from './pages/home/home-services/slider-servi
     HomeSupportComponent,
     SliderEventsComponent,
     SliderComplexServicesComponent,
-    SliderServicesComponent
+    SliderServicesComponent,
+    HeaderComponent,
+    HeaderNotificationComponent
   ],
   imports: [
     BrowserModule,

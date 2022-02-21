@@ -20,7 +20,6 @@ export class SliderServicesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('slides',this.slides);
     this.widthTrack = (this.widthSlide + this.marginSlide) * this.slides.length - this.marginSlide;
     this.widthContainer = (this.widthSlide + this.marginSlide) * 4 - this.marginSlide;
     this.minPositionTrack = -(this.widthTrack - this.widthContainer);

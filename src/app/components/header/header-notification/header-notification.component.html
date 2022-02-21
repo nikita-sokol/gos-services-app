@@ -1,0 +1,8 @@
+<div class="h-notif">
+   <div #content class="h-notif__content"  [ngClass]="{'h-notif__content_hidden': hidden}">
+      <div class="h-notif__img"></div>
+      <div class="h-notif__text">По техническим причинам оплата государственных и муниципальных услуг временно приостановлена. Приносим наши извинения!</div>
+   </div>
+   
+   <div class="h-notif__arrow" (click)="changeHidden()"></div>
+</div>
