@@ -1,0 +1,13 @@
+<div class="search">
+   <div class="wrap">
+      <form class="search__form" action="">
+         <div class="search__icon"></div>
+         <div class="search__input-block">
+            <input type='text' class="search__input" placeholder="Что вы ищете?">
+            <div class="search-hints">
+               <div class="search-hints__item" *ngFor="let hint of searchHints">{{hint.text}}</div>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>

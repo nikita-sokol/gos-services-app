@@ -17,6 +17,7 @@ import { SliderServicesComponent } from './pages/home/home-services/slider-servi
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderNotificationComponent } from './components/header/header-notification/header-notification.component';
 import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HeaderMenuComponent } from './components/header/header-menu/header-menu
     SliderServicesComponent,
     HeaderComponent,
     HeaderNotificationComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
