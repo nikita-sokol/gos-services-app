@@ -19,6 +19,12 @@ ol, ul {
 	list-style: none;
 }
 
+button {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
 a {
   text-decoration: none;
   color: $black;
