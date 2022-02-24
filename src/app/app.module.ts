@@ -19,6 +19,7 @@ import { HeaderNotificationComponent } from './components/header/header-notifica
 import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
 import { SearchComponent } from './components/search/search.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { IconsComponent } from './components/UI/icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HeaderNotificationComponent,
     HeaderMenuComponent,
     SearchComponent,
-    SidebarComponent
+    SidebarComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
