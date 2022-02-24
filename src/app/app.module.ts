@@ -18,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeaderNotificationComponent } from './components/header/header-notification/header-notification.component';
 import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
 import { SearchComponent } from './components/search/search.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SearchComponent } from './components/search/search.component';
     HeaderComponent,
     HeaderNotificationComponent,
     HeaderMenuComponent,
-    SearchComponent
+    SearchComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

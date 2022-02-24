@@ -1,0 +1,109 @@
+@import 'src/styles/variables';
+
+.sbr-menu {
+   &__list {
+   }
+   &__item {
+      &:not(:first-child) {
+         margin-top: 40px;
+      }
+   }
+   &__link {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      &:hover {
+         .sbr-menu__icon {
+            transform: scale(1,-1);
+            &::before {
+               transform: translateX(0) rotate(-45deg);
+            }
+            &::after {
+               transform: translateX(7px) rotate(45deg);
+            }
+         }
+      }
+   }
+   &__text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.375;
+      text-transform: uppercase;
+      color: #000000;
+   }
+   &__icon {
+      position: relative;
+      width: 16px;
+      height: 8px;
+      margin-left: 18px;
+      transition:all .3s;
+      &::before {
+         content: '';
+         position: absolute;
+         bottom: 3px;
+         width: 11px;
+         height: 2px;
+         border-radius: 2px;
+         background-color: #b4b4b4;
+         transform: translateX(0) rotate(-45deg);
+      }
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 3px;
+         width: 11px;
+         height: 2px;
+         border-radius: 2px;
+         background-color: #b4b4b4;
+         transform: translateX(7px) rotate(45deg);
+      }
+   }
+   
+   
+}
+
+.sidebar {
+   &__row {
+      background-color: #fff;
+      height: 100%;
+      display: flex;
+   }
+   &__column {
+      &:nth-child(1) {
+         width: 400px;
+         padding: 40px 20px 0 40px;
+      }
+      &:nth-child(2) {
+         width: 400px;
+         padding: 88px 20px 0;
+         border-left: 1px solid #EEE;
+      }
+      &:nth-child(3) {
+         width: 700px;
+         padding: 88px 20px 0;
+         border-left: 1px solid #EEE;
+      }
+   }
+   &__item {
+      &:not(:first-child) {
+         margin-top: 8px;
+      }
+   }
+   &__link {
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      border-radius: 22px;
+      height: 43px;
+      transition: all .3s;
+      &:hover {
+         background-color: #F3F3F3;
+      }
+   }
+   &__text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.357;
+   }
+}
+
