@@ -5,16 +5,17 @@
          <div class="sbr-first-level sidebar__column">
             <div class="sbr-menu">
                <ul class="sbr-list-first-lvl sbr-menu__list">
-                  <li class="sbr-item-first-lvl sbr-menu__item" *ngFor="let itemFirstLvl of sidebar">
-                     <a [href]="itemFirstLvl.link" class="sbr-link-first-lvl sbr-menu__link">
+                  <li class="sbr-item-first-lvl sbr-menu__item" *ngFor="let itemFirstLvl of sidebar; let id = index" >
+                     <a [href]="itemFirstLvl.link" class="sbr-link-first-lvl sbr-menu__link" (click)="toggleSecondLvl($event, id)" [ngClass]="{'sbr-menu__link_prevent': !itemFirstLvl.listSecondLvl.length}">
                         <span class="sbr-link-first-lvl sbr-menu__text">{{itemFirstLvl.title}}</span>
-                        <span class="sbr-menu__icon" *ngIf="itemFirstLvl.listSecondLvl.length > 0"></span>
+                        <span class="sbr-menu__icon" *ngIf="itemFirstLvl.listSecondLvl.length"></span>
                      </a>
                      
-                     <div class="sbr-second-level">
+                     <div #secondlvl class="sbr-second-level">
                         <ul class="sbr-list-second-lvl sidebar__list">
                            <li class="sbr-item-second-lvl sidebar__item" *ngFor="let itemSecondLvl of itemFirstLvl.listSecondLvl">
                               <a [href]="itemSecondLvl.link" class="sbr-link-second-lvl sidebar__link">
+                                 <span class="sidebar__icon-link" *ngIf="itemSecondLvl.icon" [style.backgroundImage]="'url(/assets/img/header-nav/' + itemSecondLvl.icon + '.svg)'" ></span>
                                  <span class="sbr-link-first-lvl sidebar__text">{{itemSecondLvl.title}}</span>
                               </a>
                            </li>
@@ -26,7 +27,7 @@
             </div>
 
          </div>
-         <div class="sbr-third-level sidebar__column">
+         <!-- <div class="sbr-third-level sidebar__column">
             <ul class="sbr-list-third-lvl">
                <li class="sbr-item-third-lvl" *ngFor="let itemThirdLvl of sidebar">
                   <a [href]="itemThirdLvl.link" class="sbr-link-third-lvl">{{itemThirdLvl.title}}</a>
@@ -39,7 +40,7 @@
                   <a [href]="itemFourthLvl.link" class="sbr-link-fourth-lvl">{{itemFourthLvl.title}}</a>
                </li>
             </ul>
-         </div>
+         </div> -->
 
          <div class="sidebar__cross cross"></div>
       </div>

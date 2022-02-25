@@ -12,7 +12,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 24px;
-      &:hover {
+      &._active {
          .sbr-menu__icon {
             transform: scale(1,-1);
             &::before {
@@ -63,6 +63,7 @@
 }
 
 .sidebar {
+   // display: none;
    &__row {
       background-color: #fff;
       height: 100%;
@@ -100,10 +101,21 @@
          background-color: #F3F3F3;
       }
    }
+   &__icon-link {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+   }
    &__text {
       font-weight: 400;
       font-size: 14px;
       line-height: 1.357;
    }
 }
-
+.sbr-second-level {
+   overflow: hidden;
+   transition: all 0.5s;
+}

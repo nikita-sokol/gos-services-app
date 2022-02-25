@@ -1,23 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, AfterViewInit {
+  @ViewChild('content') elemContent: ElementRef;
+  @ViewChildren('secondlvl') secondlvl: QueryList<ElementRef>;
+  arrayHeightSecondLvl: any = [];
 
-  sidebar = [
+  sidebar: any = [
     {
       title: 'Категории услуг',
       link: '#',
       listSecondLvl: [
         {
-          title: 'Господдержка',
+          title: 'Дом и ЖКХ',
           link: '#',
+          icon: 'bulb',
           listThirdLvl: [
             {
-              title: 'Дом и ЖКХ',
+              title: 'Господдержка',
               link: '#',
               listFourthLvl: [ 
                 {
@@ -54,29 +58,67 @@ export class SidebarComponent implements OnInit {
                 }
               ]
             },
+            {
+              title: 'Документы',
+              link: '#',
+              listFourthLvl: [ ]
+            },
+            {
+              title: 'Жилье для молодой семьи',
+              link: '#',
+              listFourthLvl: [ ]
+            },
+            {
+              title: 'Операции с недвижимостью',
+              link: '#',
+              listFourthLvl: [ ]
+            },
+            {
+              title: 'Оплата жкх',
+              link: '#',
+              listFourthLvl: [ ]
+            }
           ]
         },
         {
-          title: 'Документы',
+          title: 'Здоровье',
           link: '#',
+          icon: 'health',
           listThirdLvl: [
           ]
         },
         {
-          title: 'Жилье для молодой семьи',
+          title: 'Земля и стройка',
           link: '#',
+          icon: 'crane',
           listThirdLvl: [
           ]
         },
         {
-          title: 'Операции с недвижимостью',
+          title: 'Культура и спорт',
           link: '#',
+          icon: 'sport',
           listThirdLvl: [
           ]
         },
         {
-          title: 'Оплата жкх',
+          title: 'Образование',
           link: '#',
+          icon: 'education',
+          listThirdLvl: [
+          ]
+        },
+        {
+          title: 'Соцподдержка',
+          link: '#',
+          icon: 'socsup',
+          listThirdLvl: [
+          ]
+        },
+        {
+          title: 'Транспорт',
+          link: '#',
+          icon: 'transport',
           listThirdLvl: [
           ]
         }
@@ -112,7 +154,29 @@ export class SidebarComponent implements OnInit {
     {
       title: 'Бизнесу',
       link: '#',
-      listSecondLvl: []
+      listSecondLvl: [
+        {
+          title: 'Открытие своего дела',
+          link: '#',
+          listThirdLvl: [
+
+          ]
+        },
+        {
+          title: 'Смена места жительства',
+          link: '#',
+          listThirdLvl: [
+
+          ]
+        },
+        {
+          title: 'Утрата документов',
+          link: '#',
+          listThirdLvl: [
+
+          ]
+        },
+      ]
     },
     {
       title: 'Версия для слабовидящих',
@@ -124,6 +188,37 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
+    this.secondlvl.toArray().forEach((elem: any, i: number) => {
+      this.arrayHeightSecondLvl[i] = elem.nativeElement.offsetHeight;
+      elem.nativeElement.style.height = 0;
+    });
+  }
+
+  toggleSecondLvl(event: any, id: number) {
+    const arrElem = this.secondlvl.toArray();
+    const elem = this.secondlvl.toArray()[id].nativeElement;
+    const prevElem = elem.previousElementSibling;
+
+    if (prevElem.classList.contains('sbr-menu__link_prevent')) {
+      return false;
+    }
+    if (prevElem.classList.contains('_active')) {
+      prevElem.classList.remove('_active');
+      elem.style.height = 0;
+      return false;
+    }
+    arrElem.forEach((el: any) => {
+      el.nativeElement.previousElementSibling.classList.remove('_active');
+      el.nativeElement.style.height = 0;
+    });
+
+    elem.style.height = this.arrayHeightSecondLvl[id] + 'px';
+    prevElem.classList.add('_active');
+
+    return false;
   }
 
 }
