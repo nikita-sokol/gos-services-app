@@ -8,8 +8,7 @@
    &__icon {
       width: 98px;
       height: 98px;
-      background: url('/assets/img/icons/icon-search.png') no-repeat center;
-      background-size: 100%;
+      background: url('/assets/img/icons/search-frames.png') no-repeat 0 0/auto 100%;
    }
    &__input-block {
       flex-grow: 1;
