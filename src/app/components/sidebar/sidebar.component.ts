@@ -203,7 +203,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     const prevElem = elem.previousElementSibling;
 
     if (prevElem.classList.contains('sbr-menu__link_prevent')) {
-      return false;
+      return true;
     }
     if (prevElem.classList.contains('_active')) {
       prevElem.classList.remove('_active');

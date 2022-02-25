@@ -63,10 +63,11 @@
 }
 
 .sidebar {
-   // display: none;
+   display: none;
    &__row {
       background-color: #fff;
       height: 100%;
+      width: 500px;
       display: flex;
    }
    &__column {
