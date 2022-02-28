@@ -1,4 +1,6 @@
 @import 'src/styles/variables';
+@import 'src/styles/mixins';
+@import 'src/styles/breakpoints';
 .mob-app {
 }
 .mob-app__title {
@@ -6,14 +8,28 @@
 }
 .mob-app__block {
    color: $white;
-   background: url('/assets/img/home_page/mob-app/bg.svg') no-repeat center;
-   background-size: 100%;
+   background: url('/assets/img/home_page/mob-app/bg.svg') no-repeat center bottom/cover;
+   background-color: #B9CADD;
+   border-radius: 25px;
    padding: 40px;
    padding-right: 638px;
-   height: 385px;
+   min-height: 385px;
    display: flex;
    flex-direction: column;
    align-items: flex-start;
+   @include media(tablet_1040) {
+      padding-right: get-vw(600px, 1240);
+   }
+   @include media(tablet_1240) {
+      padding-right: get-vw(600px, 1240);
+   }
+   @include media(tablet_1040) {
+      align-items: center;
+      padding: 20px 25px 225px;
+      background-image: url('/assets/img/home_page/mob-app/bg-mobile.svg');
+      background-size: auto 225px;
+      text-align: center;
+   }
 }
 
 
@@ -23,21 +39,45 @@
    background: url('/assets/img/home_page/mob-app/icon.svg');
    background-size: 100%;
    margin-bottom: 20px;
+   @include media(tablet_1040) {
+      margin-bottom: 10px;
+   }
 }
 
 
 .mob-app__title {
    margin-bottom: 10px;
-}
 
+   @include media(tablet_1040) {
+      font-size: 18px;
+      line-height: 1.555;
+      font-weight: bold;
+   }
+}
 
 .mob-app__text {
    font-size: 16px;
    line-height: 1.6;
    font-weight: normal;
    margin-bottom: 17px;
+   @include media(tablet_1040) {
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.714;
+      margin-bottom: 10px;
+   }
 }
 
+.mob-app__btn {
+   width: 210px;
+   height: 34px;
+   &_mob {
+      display: none;
+   }
+   @include media(tablet_1040) {
+      display: block;
+   }
+}
 
 .store {
    width: 242px;
@@ -46,18 +86,30 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
+   @include media(tablet_1040) {
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 23px;
+   }
 }
 .store__qr {
    background: url('/assets/img/home_page/mob-app/qr.png');
    background-size: cover;
    width: 86px;
    height: 86px;
+   @include media(tablet_1040) {
+      display: none;
+   }
 }
 .store__buttons {
    display: flex;
    flex-direction: column;
    align-self: stretch;
    justify-content: space-between;
+   @include media(tablet_1040) {
+      flex-direction: row;
+      width: 270px;
+   }
 }
 .store-btn {
    color: $black;

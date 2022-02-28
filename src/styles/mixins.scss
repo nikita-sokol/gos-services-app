@@ -1,0 +1,9 @@
+// преобразование px в vw и hw
+@function get-vw($target, $media: 1240) {
+   $vh-context: ($media*.01) * 1px;
+   @return ($target/$vh-context) * 1vw;
+}
+@function get-vh($target, $media: 767) {
+   $vh-context: ($media*.01) * 1px;
+   @return ($target/$vh-context) * 1vh;
+}
