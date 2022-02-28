@@ -1,4 +1,5 @@
 @import 'src/styles/variables';
+@import 'src/styles/breakpoints';
 .news {
 
    // .news__header
@@ -24,18 +25,20 @@
    // .news__block
    &__block {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       
    }
  }
  
  .news-item {
-   width: 288px;
+   flex-basis: 288px;
    height: 150px;
    padding: 20px;
    background: #fff;
    border-radius: 20px;
 
+   
    // .news-item__date
    &__date {
       font-weight: normal;
@@ -56,3 +59,20 @@
       -webkit-box-orient: vertical;
    }
  }
+
+@include media(tablet_1240) {
+   .news-item {
+      flex-basis: 49%;
+      &:nth-child(n+3) {
+         margin-top: 10px;
+      }
+   }
+}
+@include media(mobile_720) {
+   .news-item {
+      flex-basis: 100%;
+      &:nth-child(n+2) {
+         margin-top: 10px;
+      }
+   }
+}
