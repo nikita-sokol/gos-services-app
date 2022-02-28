@@ -19,6 +19,11 @@ h3 {
    line-height: 1.5;
    font-weight: 600;
    text-transform: uppercase;
+   @include media(mobile_720) {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.111;
+   }
 }
 h5 {
    font-size: 14px;
