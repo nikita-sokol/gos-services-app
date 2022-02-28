@@ -1,7 +1,10 @@
 @import 'src/styles/variables';
+@import 'src/styles/breakpoints';
 
 .header-nav {
-
+   @include media(tablet_1240) {
+      display: none;
+   }
 }
 .header-nav__list {
    display: flex;

@@ -1,8 +1,9 @@
 <div class="search">
    <div class="wrap">
       <form class="search__form" action="">
-         <div class="search__icon" [style.backgroundPosition]="icSearch.bgPosition + 'px 0px'"></div>
+         <div class="search__icon search__icon_desk" [style.backgroundPosition]="icSearch.bgPosition + 'px 0px'"></div>
          <div class="search__input-block">
+            <div class="search__icon search__icon_mob" [style.backgroundPosition]="icSearch.bgPosition + 'px 0px'"></div>
             <input type='text' class="search__input" placeholder="Что вы ищете?">
             <div class="search-hints">
                <div class="search-hints__item" *ngFor="let hint of searchHints">{{hint.text}}</div>

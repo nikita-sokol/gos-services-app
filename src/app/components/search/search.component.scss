@@ -1,4 +1,6 @@
 @import 'src/styles/variables';
+@import 'src/styles/breakpoints';
+
 .search {
    padding: 50px 0 7px;
    &__form {
@@ -6,22 +8,53 @@
       align-items: flex-start;
    }
    &__icon {
-      width: 98px;
+      flex-basis: 98px;
+      flex-shrink: 0;
       height: 98px;
       background: url('/assets/img/icons/search-frames.png') no-repeat 0 0/auto 100%;
+      
+      &_desk {
+         display: block;
+      }
+      &_mob {
+         display: none;
+      }
+      @include media(mobile_720) {
+         flex-basis: 60px;
+         height: 60px;
+         &_desk {
+            display: none;
+         }
+         &_mob {
+            display: block;
+            margin-right: 6px;
+         }
+      }
    }
    &__input-block {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       flex-grow: 1;
       padding-left: 12px;
+      @include media(mobile_720) {
+         flex-direction: row;
+         align-items: center;
+      }
    }
    &__input {
-      width: 100%;
-      padding-bottom: 10px;
+      flex-grow: 1;
       font-size: 20px;
       line-height: 1.5;
       font-weight: normal;
+      padding-bottom: 10px;
       color: $redgrey;
       border-bottom: 2px solid #D8D8D8;
+      @include media(mobile_720) {
+         font-size: 18px;
+         line-height: 1.111;
+         padding-bottom: 12px;
+      }
    }
 }
 
