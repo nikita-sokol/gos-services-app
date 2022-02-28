@@ -1,8 +1,16 @@
 @import 'src/styles/variables';
 
+@import 'src/styles/breakpoints';
+
 .header {
    padding: 26px 0 20px;
    background: #fff;
+   &__search {
+      margin-top: 50px;
+      @include media(tablet_1240) {
+         margin-top: 0;
+      }
+   }
 }
 
 .page-body {
