@@ -1,16 +1,22 @@
 @mixin media($media) {
-   @if $media == tablet_1240 {
-      @media screen and (max-width: 1240px) {
-        @content
-      }
+  @if $media == desktop_1366 {
+    @media screen and (max-width: 1366px) {
+      @content
     }
-    
+  }
+  
+  @if $media == tablet_1240 {
+    @media screen and (max-width: 1240px) {
+      @content
+    }
+  }
+
   @if $media == tablet_1040 {
     @media screen and (max-width: 1040px) {
       @content
     }
   }
-  
+
   @if $media == mobile_720 {
     @media screen and (max-width: 720px) {
       @content

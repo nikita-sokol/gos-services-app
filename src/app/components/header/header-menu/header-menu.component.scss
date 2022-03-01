@@ -1,4 +1,5 @@
 @import 'src/styles/variables';
+@import 'src/styles/breakpoints';
 
 .h-menu {
    padding: 0 20px;
@@ -83,7 +84,7 @@
       width: 36px;
       height: 54px;
       background: url('/assets/img/header/logo-gosuslugi.svg') no-repeat center;
-      background-size: 100%;
+      background-size: contain;
    }
    &__title {
       margin-top: 8px;
@@ -97,6 +98,12 @@
       line-height: 1.357;
       text-transform: uppercase;
       color: $scarlet;
+   }
+   &__title-mob {
+      display: none;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.357;
    }
 }
 
@@ -222,10 +229,72 @@
       background-size: 100%;
       width: 24px;
       height: 24px;
-      margin-right: 9px;
    }
    &__text {
+      margin-left: 9px;
       font-size: 14px;
       font-weight: 500;
    }
 }
+
+@include media(desktop_1366) {
+   .logo-gos__block-text {
+      display: none;
+   }
+}
+
+@include media(tablet_1240) {
+   .h-menu-opport__text {
+      display: none;
+   }
+
+   .h-menu-toggle {
+      padding: 0;
+   }
+
+   .h-menu {
+      justify-content: space-between;
+
+      &__logo {
+         margin-right: 0;
+      }
+   }
+
+   .logo-gos {
+      padding: 0;
+
+      &__icon {
+         height: 34px;
+         margin-bottom: 6px;
+         margin-right: 1px;
+      }
+      &__title-mob {
+         display: block;
+      }
+   }
+
+   .h-menu-opport {
+      display: none;
+   }
+
+   .h-menu-themes {
+      display: none;
+   }
+
+   .h-menu-select {
+      display: none;
+   }
+
+   .h-menu-mode {      
+      display: none;
+   }
+
+   .h-menu-logit {
+      padding: 0;
+      border-left: none;
+      &__text {
+         display: none;
+      }
+   }
+}
+
