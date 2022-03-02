@@ -1,4 +1,5 @@
 @import 'src/styles/variables';
+@import 'src/styles/breakpoints';
 
 .slider {
    position: relative;
@@ -9,6 +10,7 @@
       left: 40px;
       bottom: 30px;
       display: flex;
+      z-index: 10;
    }
    &__pagin {
       transition: $base-duration;
@@ -97,11 +99,6 @@
       transform: translateX(103%);
       z-index: 5;
    }
-   // &_animation {
-   //    transition: all 0s;
-   // }
-   
-
 
    &__title {
       margin-bottom: 20px;
@@ -205,5 +202,35 @@
    }
    &_vaccination-appointment {
       background-color: #89D5C6;
+   }
+}
+
+@include media(desktop_1366) {
+   .slider {
+      &__slides {
+         height: auto;
+         min-height: 227px;
+      }
+      &__arrow {
+         display: none;
+      }
+      &__pagins {
+         left: 50%;
+         bottom: 15px;
+         transform: translateX(-50%);
+      }
+   }
+   .slide {
+      align-items: center;
+      padding: 30px 20px 39px;
+      &__title {
+         text-align: center;
+         font-size: 18px;
+         line-height: 1.555;
+         font-weight: bold;
+      }
+      &__text {
+         display: none;
+      }
    }
 }

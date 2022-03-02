@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-slider-events',
@@ -6,11 +6,20 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./slider-events.component.scss']
 })
 export class SliderEventsComponent implements OnInit, AfterViewInit {
+  @HostListener('window:resize') 
+  onResize() {
+    if (window.innerWidth <= 1366) {
+      this.media = 'desktop_1366'
+    } else {
+      this.media = ''
+    }
+  }
   @Input() slides: any;
   prevSlideID: any;
   currentSlideID = 0;
   nextSlideID = 1;
   lastSlideID: any;
+  media = '';
 
   touch = false;
   pos = 0;
@@ -125,6 +134,6 @@ export class SliderEventsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    document.addEventListener('mousedown', this.swipeStart);
+    this.onResize();
   }
 }
