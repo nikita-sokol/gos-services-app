@@ -1,14 +1,24 @@
 <div class="slider">
    <!-- Первый вариант слайдера -->
+   <!-- [style.transition]="transition" -->
    <div class="slider__slides">
       <div class="slider__slide slide" *ngFor="let slide of slides; let id = index"
          [style.backgroundImage]="'url(/assets/img/home_page/events-slider/slides/' + slide.slideName + '.svg)'"
+         [style.transform]="transformSlide(id)"
+         [style.transition]="transition"
          [class]="slide.slideName ? 'slide_' + slide.slideName : ''"
          [ngClass]="{
             'slide_current-slide': id == currentSlideID, 
             'slide_prev-slide': id == prevSlideID, 
             'slide_next-slide': id == nextSlideID
-         }">
+         }"
+         (mousedown)="swipeStart($event)"
+         (mousemove)="swipeAction($event)"
+         (mouseup)="swipeEnd($event)"
+         (touchstart)="swipeStart($event)"
+         (touchmove)="swipeAction($event)"
+         (touchend)="swipeEnd($event)"
+         >
             <h2 class="slide__title">{{slide.title}}</h2>
             <div class="slide__text">{{slide.text}}</div>
             <button class="btn btn_bgcolor_scarlet slide__btn">
@@ -38,10 +48,10 @@
 
    </div> -->
 
-   <div class="slider__arrow slider__arrow_prev" (click)="this.changeCurrentSlide('prev')">
+   <div class="slider__arrow slider__arrow_prev" (click)="changeCurrentSlide('prev')">
       <span></span>
    </div>
-   <div class="slider__arrow slider__arrow_next" (click)="this.changeCurrentSlide('next')">
+   <div class="slider__arrow slider__arrow_next" (click)="changeCurrentSlide('next')">
       <span></span>
    </div>
    <div class="slider__pagins">

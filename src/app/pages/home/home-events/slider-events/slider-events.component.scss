@@ -79,6 +79,7 @@
    z-index: 1;
    $duration1: .65s;
    $duration2: .4s;
+   transform: translateX(0);
    
    &_prev-slide {
       transition: transform $duration1, opacity $duration2 linear;
