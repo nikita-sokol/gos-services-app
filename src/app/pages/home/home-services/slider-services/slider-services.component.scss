@@ -1,4 +1,5 @@
 @import 'src/styles/variables';
+@import 'src/styles/breakpoints';
 
 .slider {
    position: relative;
@@ -118,4 +119,27 @@
    height: 40px;
    width: 100%;
    border-radius: 25px;
+}
+
+@include media(desktop_1366) {
+   .slider-arrow {
+      display: none;
+   }
+}
+@include media(tablet_1240) {
+   .slider-container {
+      overflow: visible;
+   }
+   .slide {
+      cursor: pointer;
+      height: 130px;
+      &_school {
+         background-image: none;
+      }
+   }
+   .slide__img,
+   .slide__label,
+   .slide__btn {
+      display: none;
+   }
 }
