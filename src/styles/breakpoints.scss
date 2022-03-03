@@ -22,4 +22,24 @@
       @content
     }
   }
+  @if $media == mobile_579 {
+    @media screen and (max-width: 579px) {
+      @content
+    }
+  }
+  @if $media == mobile_500 {
+    @media screen and (max-width: 450px) {
+      @content
+    }
+  }
+  @if $media == mobile_450 {
+    @media screen and (max-width: 450px) {
+      @content
+    }
+  }
+  @if $media == mobile_360 {
+    @media screen and (max-width: 360px) {
+      @content
+    }
+  }
 }
