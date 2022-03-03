@@ -5,7 +5,7 @@
       <div class="slider__slide slide" *ngFor="let slide of slides; let id = index"
          [style.backgroundImage]="(media == 'desktop_1366') ? 'none' : 'url(/assets/img/home_page/events-slider/slides/' + slide.slideName + '.svg)'"
          [style.transform]="transformSlide(id)"
-         [style.transition]="transition"
+         [style.transition]="transstionSlide(id)"
          [class]="slide.slideName ? 'slide_' + slide.slideName : ''"
          [ngClass]="{
             'slide_current-slide': id == currentSlideID, 

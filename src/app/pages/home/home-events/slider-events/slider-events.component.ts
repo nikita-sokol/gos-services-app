@@ -100,6 +100,12 @@ export class SliderEventsComponent implements OnInit, AfterViewInit {
         (id == this.nextSlideID) ? 'translateX(103%)' : 'translateX(0)'
   }
 
+  transstionSlide(id: any) {
+    return (id == this.prevSlideID) ? 'transform .65s, opacity .4s linear' :
+        (id == this.currentSlideID) ? this.transition :
+        (id == this.nextSlideID) ? 'transform .65s, opacity .4s linear': 'none'
+  }
+
   swipeStart(event: any) {
     this.getEvent(event);
     this.touch = true;
