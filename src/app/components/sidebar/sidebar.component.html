@@ -1,7 +1,7 @@
-<div class="sidebar">
-   <div class="overlay">
+<div class="sidebar" [ngClass]="{'sidebar_active': active}">
+   <div class="overlay" [ngClass]="{'overlay_active': active}" (click)="onActiveChange($event)">
 
-      <div class="sidebar__row">
+      <div class="sidebar__row" [ngClass]="{'sidebar__row_active': active}">
          <div class="sbr-first-level sidebar__column">
             <div class="sbr-menu">
                <ul class="sbr-list-first-lvl sbr-menu__list">
@@ -42,7 +42,7 @@
             </ul>
          </div> -->
 
-         <div class="sidebar__cross cross"></div>
+         <button class="sidebar__cross cross" (click)="onActiveChange($event)"></button>
       </div>
 
    </div>

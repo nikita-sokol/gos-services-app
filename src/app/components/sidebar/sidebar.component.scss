@@ -63,12 +63,25 @@
 }
 
 .sidebar {
-   display: none;
+   visibility: hidden;
+   pointer-events: none;
+
+   &_active {
+      visibility: visible;
+      pointer-events: auto;
+   }
    &__row {
+      position: relative;
+      transform: translate(-100%);
       background-color: #fff;
       height: 100%;
       width: 500px;
       display: flex;
+      transition: all .4s;
+      transform: translate(-100%);
+      &_active {
+         transform: translate(0);
+      }
    }
    &__column {
       &:nth-child(1) {

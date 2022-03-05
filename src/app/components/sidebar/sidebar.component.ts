@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, OnInit, AfterViewInit, EventEmitter, ElementRef, QueryList, ViewChild, ViewChildren, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,8 +6,17 @@ import { Component, OnInit, AfterViewInit, ElementRef, QueryList, ViewChild, Vie
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
+  @Input() active: boolean;
+  @Output() activeChange  = new EventEmitter();
   @ViewChild('content') elemContent: ElementRef;
   @ViewChildren('secondlvl') secondlvl: QueryList<ElementRef>;
+
+  onActiveChange(event:any) {
+    if (event.target.classList.contains('overlay') || event.target.classList.contains('cross')) {
+      this.activeChange.emit(false);
+    }
+  } 
+
   arrayHeightSecondLvl: any = [];
 
   sidebar: any = [
