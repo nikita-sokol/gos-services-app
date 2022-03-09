@@ -14,8 +14,14 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   onActiveChange(event:any) {
     if (event.target.classList.contains('overlay') || event.target.classList.contains('cross')) {
       this.activeChange.emit(false);
+      this.activeLinkIdSecondLvl = null;
+      this.inactiveSecondLvl();
+      this.itemsThirdLvl = null;
     }
-  } 
+  }
+
+  activeLinkIdSecondLvl: any = null;
+  itemsThirdLvl: any = null;
 
   arrayHeightSecondLvl: any = [];
 
@@ -94,6 +100,22 @@ export class SidebarComponent implements OnInit, AfterViewInit {
           link: '#',
           icon: 'health',
           listThirdLvl: [
+            
+            {
+              title: 'Медицинская помощь',
+              link: '#',
+              listFourthLvl: [ ]
+            },
+            {
+              title: 'Мероприятия',
+              link: '#',
+              listFourthLvl: [ ]
+            },
+            {
+              title: 'Справки и документы',
+              link: '#',
+              listFourthLvl: [ ]
+            },
           ]
         },
         {
@@ -206,6 +228,21 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     });
   }
 
+  onSecondLevel(id: any, listThirdLvl: any) {
+    if (this.activeLinkIdSecondLvl == id) {
+      return false;
+    }
+    this.activeLinkIdSecondLvl = id;
+
+    if (listThirdLvl && listThirdLvl.length) {
+      this.activeLinkIdSecondLvl = id;
+      this.itemsThirdLvl = listThirdLvl;
+    } else {
+      this.itemsThirdLvl = null;
+    }
+    return true;
+  }
+
   toggleSecondLvl(event: any, id: number) {
     const arrElem = this.secondlvl.toArray();
     const elem = this.secondlvl.toArray()[id].nativeElement;
@@ -228,6 +265,14 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     prevElem.classList.add('_active');
 
     return false;
+  }
+
+  inactiveSecondLvl() {
+    const arrayElem = this.secondlvl.toArray();
+    arrayElem.forEach(el => {
+      el.nativeElement.style.height = 0;
+      el.nativeElement.previousElementSibling.classList.remove('_active');
+    })
   }
 
 }
