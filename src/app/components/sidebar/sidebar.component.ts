@@ -15,13 +15,19 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     if (event.target.classList.contains('overlay') || event.target.classList.contains('cross')) {
       this.activeChange.emit(false);
       this.activeLinkIdSecondLvl = null;
+      this.activeLinkIdThirdLvl = null;
+      this.activeLinkIdFourthLvl = null;
       this.inactiveSecondLvl();
       this.itemsThirdLvl = null;
+      this.itemsFourthLvl = null;
     }
   }
 
   activeLinkIdSecondLvl: any = null;
+  activeLinkIdThirdLvl: any = null;
+  activeLinkIdFourthLvl: any = null;
   itemsThirdLvl: any = null;
+  itemsFourthLvl: any = null;
 
   arrayHeightSecondLvl: any = [];
 
@@ -239,6 +245,21 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       this.itemsThirdLvl = listThirdLvl;
     } else {
       this.itemsThirdLvl = null;
+    }
+    return true;
+  }
+
+  onThirdLevel(id: any, listFourthLvl: any) {
+    if (this.activeLinkIdThirdLvl == id) {
+      return false;
+    }
+    this.activeLinkIdThirdLvl = id;
+
+    if (listFourthLvl && listFourthLvl.length) {
+      this.activeLinkIdThirdLvl = id;
+      this.itemsFourthLvl = listFourthLvl;
+    } else {
+      this.itemsFourthLvl = null;
     }
     return true;
   }
