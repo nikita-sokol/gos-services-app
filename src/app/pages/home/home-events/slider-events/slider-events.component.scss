@@ -207,12 +207,16 @@
 
 @include media(desktop_1366) {
    .slider {
+      &__arrow {
+         display: none;
+      }
+   }
+}
+@include media(tablet_1240) {
+   .slider {
       &__slides {
          height: auto;
          min-height: 227px;
-      }
-      &__arrow {
-         display: none;
       }
       &__pagins {
          left: 50%;

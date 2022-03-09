@@ -8,8 +8,8 @@ import { AfterViewInit, Component, Input, OnInit, HostListener } from '@angular/
 export class SliderEventsComponent implements OnInit, AfterViewInit {
   @HostListener('window:resize') 
   onResize() {
-    if (window.innerWidth <= 1366) {
-      this.media = 'desktop_1366'
+    if (window.innerWidth <= 1240) {
+      this.media = 'tablet_1240'
     } else {
       this.media = ''
     }
@@ -116,8 +116,8 @@ export class SliderEventsComponent implements OnInit, AfterViewInit {
   }
 
   swipeAction(event: any) {
-    this.getEvent(event);
     if (this.touch) {
+      this.getEvent(event);
       this.posX2 = this.posX1 - event.clientX;
       this.posUnits = +this.posUnits.match(this.trfRegExp) - this.posX2 + 'px';
       this.posX1 = event.clientX;

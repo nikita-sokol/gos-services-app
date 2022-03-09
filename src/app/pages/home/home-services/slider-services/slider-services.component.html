@@ -1,6 +1,17 @@
 <div class="slider">
    <div class="slider-container">
-      <div class="slider-track" [ngStyle]="{ 'left': positionTrack + 'px', 'transition': transition+'s' }">
+      <div class="slider-track" 
+        [ngStyle]="{
+          'left': positionTrack + 'px', 
+          'transition': transition
+        }"
+        (mousedown)="swipeStart($event)"
+        (mousemove)="swipeAction($event)"
+        (mouseup)="swipeEnd($event)"
+        (touchstart)="swipeStart($event)"
+        (touchmove)="swipeAction($event)"
+        (touchend)="swipeEnd($event)"
+        >
 
         <form class="slide" *ngFor="let slide of slides" [class]="slide.className ? 'slide_'+ slide.className: ''">
           <div class="slide__block-text">

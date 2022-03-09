@@ -40,24 +40,6 @@ export class SliderComplexServicesComponent implements OnInit {
     }
   }
 
-  swipeTrackPosition(mode: any) {
-    if (mode === 'prev') {
-      if (this.positionTrack < 0) {
-        this.positionTrack += this.widthSlide + this.marginSlide;
-      } else {
-        this.positionTrack = this.minPositionTrack;
-      }
-    }
-
-    if (mode === 'next') {
-      if (this.positionTrack > this.minPositionTrack) {
-        this.positionTrack -= this.widthSlide + this.marginSlide;
-      } else {
-        this.positionTrack = 0;
-      }
-    }
-  }
-
   touch = false;
   posCurInit = 0;
   posCurX1 = 0;
@@ -109,8 +91,7 @@ export class SliderComplexServicesComponent implements OnInit {
       if (this.positionTrack > 0) {
         this.positionTrack = 0;
       }
-
-
+      
       this.touch = false;
     }
   }
