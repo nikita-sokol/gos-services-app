@@ -238,6 +238,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     if (this.activeLinkIdSecondLvl == id) {
       return false;
     }
+    this.activeLinkIdThirdLvl = null;
     this.activeLinkIdSecondLvl = id;
 
     if (listThirdLvl && listThirdLvl.length) {
