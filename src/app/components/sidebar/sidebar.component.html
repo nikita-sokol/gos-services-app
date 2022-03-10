@@ -46,8 +46,8 @@
                </li>
             </ul>
          </div>
-         <div class="sbr-fourth-level sidebar__column" [ngClass]="{'sidebar__column_active': itemsFourthLvl}">
-            <ul class="sbr-list-fourth-lvl sidebar__list" [ngClass]="{'sidebar__list_active': itemsFourthLvl}">
+         <div class="sbr-fourth-level sidebar__column" [ngClass]="{'sidebar__column_active': itemsFourthLvl && itemsThirdLvl}">
+            <ul class="sbr-list-fourth-lvl sidebar__list" [ngClass]="{'sidebar__list_active': itemsFourthLvl && itemsThirdLvl}">
                <li class="sbr-item-fourth-lvl sidebar__item" *ngFor="let itemFourthLvl of itemsFourthLvl">
                   <a 
                      [href]="itemFourthLvl.link" 
