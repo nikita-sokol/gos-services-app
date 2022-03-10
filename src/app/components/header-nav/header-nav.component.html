@@ -1,70 +1,14 @@
 <nav class="header-nav">
    <div class="wrap">
       <ul class="header-nav__list">
-      <li class="header-nav__item header-nav__item_active">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_bulb">
-               <app-icons [id]="'bulb'"></app-icons>
-            </span>
-            <span class="header-nav__text">Дом и ЖКХ</span>
-         </a>
-      </li>
-      <li class="header-nav__item">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_health">
-               <app-icons [id]="'health'"></app-icons>
-            </span>
-            <span class="header-nav__text">Здоровье</span>
-         </a>
-      </li>
-      <li class="header-nav__item">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_crane">
-               <app-icons [id]="'crane'"></app-icons>
-            </span>
-            <span class="header-nav__text">Земля<br>и стройка</span>
-         </a>
-      </li>
-      <li class="header-nav__item">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_sport">
-               <app-icons [id]="'sport'"></app-icons>
-            </span>
-            <span class="header-nav__text">Культура<br>и спорт</span>
-         </a>
-      </li>
-      <li class="header-nav__item">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_docs">
-               <app-icons [id]="'docs'"></app-icons>
-            </span>
-            <span class="header-nav__text">Личные документы</span>
-         </a>
-      </li>
-      <li class="header-nav__item">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_education">
-               <app-icons [id]="'education'"></app-icons>
-            </span>
-            <span class="header-nav__text">Образование</span>
-         </a>
-      </li>
-      <li class="header-nav__item">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_socsup">
-               <app-icons [id]="'socsup'"></app-icons>
-            </span>
-            <span class="header-nav__text">Соцподдержка</span>
-         </a>
-      </li>
-      <li class="header-nav__item">
-         <a href="#" class="header-nav__link">
-            <span class="header-nav__icon header-nav__icon_transport">
-               <app-icons [id]="'transport'"></app-icons>
-            </span>
-            <span class="header-nav__text">Транспорт</span>
-         </a>
-      </li>
+         <li class="header-nav__item" *ngFor="let item of navList">
+            <a [href]="item.link" class="header-nav__link">
+               <span class="header-nav__icon header-nav__icon_bulb" [class]="item.class ? item.class : ''">
+                  <app-icons [id]="item.icon"></app-icons>
+               </span>
+               <span class="header-nav__text">{{item.text}}</span>
+            </a>
+         </li>
       </ul>
    </div>
 </nav>
