@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-nav.component.scss']
 })
 export class HeaderNavComponent implements OnInit {
+  iconActiveColor = 'icon-active-white';
+  
   navList = [
     {
+      active: true,
       text: 'Дом и ЖКХ',
       link: '#',
       icon: 'bulb',
@@ -20,13 +23,13 @@ export class HeaderNavComponent implements OnInit {
       class: 'health'
     },
     {
-      text: 'Земля<br>и стройка',
+      text: 'Земля и стройка',
       link: '#',
       icon: 'crane',
       class: 'crane'
     },
     {
-      text: 'Культура<br>и спорт',
+      text: 'Культура и спорт',
       link: '#',
       icon: 'sport',
       class: 'sport'

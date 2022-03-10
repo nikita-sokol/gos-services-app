@@ -20,7 +20,9 @@
                                  [ngClass]="{'sidebar__link_active': idSecindLvl == activeLinkIdSecondLvl}" 
                                  (mouseover)="onSecondLevel(idSecindLvl, itemSecondLvl.listThirdLvl)"
                                  >
-                                 <span class="sidebar__icon-link" *ngIf="itemSecondLvl.icon" [style.backgroundImage]="'url(/assets/img/header-nav/' + itemSecondLvl.icon + '.svg)'" ></span>
+                                 <span class="sidebar__icon-link" *ngIf="itemSecondLvl.icon" >
+                                    <app-icons [id]="itemSecondLvl.icon" ></app-icons>
+                                 </span>
                                  <span class="sbr-link-first-lvl sidebar__text">{{itemSecondLvl.title}}</span>
                               </a>
                            </li>

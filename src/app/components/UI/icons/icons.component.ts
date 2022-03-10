@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class IconsComponent implements OnInit {
   @Input() id: string;
+  @Input() active: any;
+  @Input() activeColor: any;
   constructor() { }
 
   ngOnInit(): void {
