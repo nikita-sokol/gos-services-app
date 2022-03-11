@@ -266,6 +266,12 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   toggleSecondLvl(event: any, id: number) {
+    this.itemsThirdLvl = null;
+    this.itemsFourthLvl = null;
+    this.activeLinkIdSecondLvl = null;
+    this.activeLinkIdThirdLvl = null;
+    this.activeLinkIdFourthLvl = null;
+    
     const arrElem = this.secondlvl.toArray();
     const elem = this.secondlvl.toArray()[id].nativeElement;
     const prevElem = elem.previousElementSibling;

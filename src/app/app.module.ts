@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HeaderNavComponent } from './components/header-nav/header-nav.component';
 import { HomeEventsComponent } from './pages/home/home-events/home-events.component';
 import { HomeServicesComponent } from './pages/home/home-services/home-services.component';
 import { HomeComplexServicesComponent } from './pages/home/home-complex-services/home-complex-services.component';
@@ -16,6 +15,7 @@ import { SliderEventsComponent } from './pages/home/home-events/slider-events/sl
 import { SliderComplexServicesComponent } from './pages/home/home-complex-services/slider-complex-services/slider-complex-services.component';
 import { SliderServicesComponent } from './pages/home/home-services/slider-services/slider-services.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HeaderNavComponent } from './components/header/header-nav/header-nav.component';
 import { HeaderNotificationComponent } from './components/header/header-notification/header-notification.component';
 import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
 import { SearchComponent } from './components/search/search.component';
