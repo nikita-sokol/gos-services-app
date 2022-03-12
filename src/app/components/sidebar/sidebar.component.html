@@ -1,24 +1,25 @@
 <div class="sidebar" [ngClass]="{'sidebar_active': active}">
-   <div class="overlay" [ngClass]="{'overlay_active': active}" (click)="onActiveChange($event)">
+   <div class="overlay" [ngClass]="{'overlay_active': active}" (click)="closeSidebar($event)">
 
       <div class="sidebar__row" [ngClass]="{'sidebar__row_active': active}">
          <div class="sbr-first-level sidebar__column">
+
             <div class="sbr-menu">
                <ul class="sbr-list-first-lvl sbr-menu__list">
                   <li class="sbr-item-first-lvl sbr-menu__item" *ngFor="let itemFirstLvl of sidebar; let id = index" >
-                     <a [href]="itemFirstLvl.link" class="sbr-link-first-lvl sbr-menu__link" (click)="toggleSecondLvl($event, id)" [ngClass]="{'sbr-menu__link_prevent': !itemFirstLvl.listSecondLvl.length}">
+                     <a [href]="itemFirstLvl.link" class="sbr-link-first-lvl sbr-menu__link" (click)="toggleSecondLvl(id)" [ngClass]="{'sbr-menu__link_prevent': !itemFirstLvl.contentSecondLvl}">
                         <span class="sbr-link-first-lvl sbr-menu__text">{{itemFirstLvl.title}}</span>
-                        <span class="sbr-menu__icon" *ngIf="itemFirstLvl.listSecondLvl.length"></span>
+                        <span class="sbr-menu__icon" *ngIf="itemFirstLvl.contentSecondLvl.length"></span>
                      </a>
                      
-                     <div #secondlvl class="sbr-second-level">
+                     <div #secondLvl class="sbr-second-level">
                         <ul class="sbr-list-second-lvl">
-                           <li class="sbr-item-second-lvl sidebar__item" *ngFor="let itemSecondLvl of itemFirstLvl.listSecondLvl; let idSecindLvl = index">
+                           <li class="sbr-item-second-lvl sidebar__item" *ngFor="let itemSecondLvl of itemFirstLvl.contentSecondLvl; let idSecondLvl = index">
                               <a 
                                  [href]="itemSecondLvl.link" 
                                  class="sbr-link-second-lvl sidebar__link" 
-                                 [ngClass]="{'sidebar__link_active': idSecindLvl == activeLinkIdSecondLvl}" 
-                                 (mouseover)="onSecondLevel(idSecindLvl, itemSecondLvl.listThirdLvl)"
+                                 [ngClass]="{'sidebar__link_active': idSecondLvl == idActiveLinkSecondLvl}" 
+                                 (mouseover)="onSecondLevel(idSecondLvl, itemSecondLvl.contentThirdLvl)"
                                  >
                                  <span class="sidebar__icon-link" *ngIf="itemSecondLvl.icon" >
                                     <app-icons [id]="itemSecondLvl.icon" ></app-icons>
@@ -32,25 +33,26 @@
                   </li>
                </ul>
             </div>
-
          </div>
-         <div class="sbr-third-level sidebar__column" [ngClass]="{'sidebar__column_active': itemsThirdLvl}">
-            <ul class="sbr-list-third-lvl sidebar__list" [ngClass]="{'sidebar__list_active': itemsThirdLvl}">
-               <li class="sbr-item-third-lvl sidebar__item" *ngFor="let itemThirdLvl of itemsThirdLvl; let idThirdLvl = index">
+
+         <div class="sbr-third-level sidebar__column" [ngClass]="{'sidebar__column_active': contentThirdLvl}">
+            <ul class="sbr-list-third-lvl sidebar__list" [ngClass]="{'sidebar__list_active': contentThirdLvl}">
+               <li class="sbr-item-third-lvl sidebar__item" *ngFor="let itemThirdLvl of contentThirdLvl; let idThirdLvl = index">
                   <a 
                      [href]="itemThirdLvl.link" 
                      class="sbr-link-third-lvl sidebar__link"
-                     [ngClass]="{'sidebar__link_active': idThirdLvl == activeLinkIdThirdLvl}"
-                     (mouseover)="onThirdLevel(idThirdLvl, itemThirdLvl.listFourthLvl)"
+                     [ngClass]="{'sidebar__link_active': idThirdLvl == idActiveLinkThirdLvl}"
+                     (mouseover)="onThirdLevel(idThirdLvl, itemThirdLvl.contentFourthLvl)"
                      >
                      <span class="sbr-link-third-lvl sidebar__text">{{itemThirdLvl.title}}</span>
                   </a>
                </li>
             </ul>
          </div>
-         <div class="sbr-fourth-level sidebar__column" [ngClass]="{'sidebar__column_active': itemsFourthLvl && itemsThirdLvl}">
-            <ul class="sbr-list-fourth-lvl sidebar__list" [ngClass]="{'sidebar__list_active': itemsFourthLvl && itemsThirdLvl}">
-               <li class="sbr-item-fourth-lvl sidebar__item" *ngFor="let itemFourthLvl of itemsFourthLvl">
+
+         <div class="sbr-fourth-level sidebar__column" [ngClass]="{'sidebar__column_active': contentFourthLvl && contentThirdLvl}">
+            <ul class="sbr-list-fourth-lvl sidebar__list" [ngClass]="{'sidebar__list_active': contentFourthLvl && contentThirdLvl}">
+               <li class="sbr-item-fourth-lvl sidebar__item" *ngFor="let itemFourthLvl of contentFourthLvl">
                   <a 
                      [href]="itemFourthLvl.link" 
                      class="sbr-link-fourth-lvl sidebar__link"
@@ -61,7 +63,7 @@
             </ul>
          </div>
 
-         <button class="sidebar__cross cross" (click)="onActiveChange($event)"></button>
+         <button class="sidebar__cross cross" (click)="closeSidebar($event)" [ngClass]="{'sidebar__cross_inactive': !active}"></button>
       </div>
 
    </div>

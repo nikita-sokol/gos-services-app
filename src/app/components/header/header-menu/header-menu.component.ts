@@ -7,14 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header-menu.component.scss']
 })
 export class HeaderMenuComponent implements OnInit {
-  @Input() activeMenu: boolean = false;
+  @Input() activeSidebar: boolean = false;
 
   constructor() { }
 
-  
-
-  onToggleMenu() {
-    this.activeMenu = !this.activeMenu;
+  toggleActiveSidebar() {
+    this.activeSidebar = !this.activeSidebar;
   }
 
   ngOnInit(): void {

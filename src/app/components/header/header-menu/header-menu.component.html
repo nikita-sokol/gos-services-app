@@ -1,7 +1,7 @@
-<app-sidebar [(active)]="activeMenu" ></app-sidebar>
+<app-sidebar [(active)]="activeSidebar" ></app-sidebar>
 <div class="h-menu">
    <div class="h-menu-toggle">
-      <button class="h-menu-toggle__btn" [ngClass]="{'_active': activeMenu}" (click)="onToggleMenu()"></button>
+      <button class="h-menu-toggle__btn" [ngClass]="{'_active': activeSidebar}" (click)="toggleActiveSidebar()"></button>
    </div>
 
    <a href="#" class="h-menu__logo logo-gos">

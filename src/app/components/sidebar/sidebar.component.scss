@@ -58,8 +58,6 @@
          transform: translateX(7px) rotate(45deg);
       }
    }
-   
-   
 }
 
 .sidebar {
@@ -91,21 +89,23 @@
          transition: width .3s;
          padding: 0;
          width: 0;
-         border-left: 1px solid #EEE;
+         border-left: 0px solid #EEE;
       }
       &_active:nth-child(2) {
          padding: 88px 20px 0;
          width: 400px;
+         border-left: 1px solid #EEE;
       }
       &:nth-child(3) {
          transition: width .3s;
          width: 0;
          padding: 0;
-         border-left: 1px solid #EEE;
+         border-left: 0px solid #EEE;
       }
       &_active:nth-child(3) {
          padding: 88px 20px 0;
          width: 400px;
+         border-left: 1px solid #EEE;
       }
    }
    &__list {
@@ -144,12 +144,18 @@
       font-size: 14px;
       line-height: 1.357;
    }
+   &__cross {
+      &_inactive {
+         opacity: 0;
+      }
+   }
 }
+
+
 .sbr-second-level {
    overflow: hidden;
    transition: all 0.5s;
 }
-
 .sbr-item-second-lvl {
    &_active {
 
