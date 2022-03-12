@@ -201,6 +201,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     }
   ]
 
+  idActiveLinkfirstLvl: any = null;
   idActiveLinkSecondLvl: any = null;
   idActiveLinkThirdLvl: any = null;
 
@@ -242,7 +243,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   }
 
   onSecondLevel(id: any, contentThirdLvl: any) {
-    if (this.idActiveLinkSecondLvl != id) {
+    if (this.idActiveLinkSecondLvl != id && this.idActiveLinkfirstLvl) {
       this.idActiveLinkSecondLvl = id;
       this.idActiveLinkThirdLvl = null;
       this.contentThirdLvl = null;
@@ -286,12 +287,16 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     if (activeLinkFirstLvl) {
       linkFirstLvl.classList.remove('_active');
       currentSecondLvl.style.height = 0;
+      this.idActiveLinkfirstLvl = false;
     } else {
       this.noHeightSecondLvl();
 
       currentSecondLvl.style.height = this.secondLvlHeight[id] + 'px';
       linkFirstLvl.classList.add('_active');
+      this.idActiveLinkfirstLvl = true;
     }
+
+    
   }
 
   noHeightSecondLvl() {
