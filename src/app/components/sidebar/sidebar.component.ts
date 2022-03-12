@@ -147,6 +147,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
         {
           title: 'Открытие своего дела',
           link: '#',
+          icon: 'business',
           contentThirdLvl: [
 
           ]
@@ -154,6 +155,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
         {
           title: 'Смена места жительства',
           link: '#',
+          icon: 'change',
           contentThirdLvl: [
 
           ]
@@ -161,6 +163,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
         {
           title: 'Утрата документов',
           link: '#',
+          icon: 'documents',
           contentThirdLvl: [
 
           ]
