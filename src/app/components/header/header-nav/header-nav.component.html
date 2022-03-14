@@ -1,10 +1,10 @@
 <nav class="header-nav">
    <div class="wrap">
       <ul class="header-nav__list">
-         <li class="header-nav__item" *ngFor="let item of navList" [ngClass]="{'header-nav__item_active': item.active}">
+         <li class="header-nav__item" *ngFor="let item of navList; let id = index" [ngClass]="{'header-nav__item_active': iconActive === id ? true : false}">
             <a [href]="item.link" class="header-nav__link">
                <span class="header-nav__icon" [class]="item.class ? item.class : ''">
-                  <app-icons [id]="item.icon" [activeColor]="iconActiveColor" [active]="item.active"></app-icons>
+                  <app-icons [id]="item.icon" [activeColor]="iconActiveColor" [active]="iconActive === id ? true : false"></app-icons>
                </span>
                <span class="header-nav__text">{{item.text}}</span>
             </a>

@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderNavComponent implements OnInit {
   iconActiveColor = 'icon-active-white';
   
+  iconActive: any = null;
+
   navList = [
     {
-      active: true,
       text: 'Дом и ЖКХ',
       link: '#',
       icon: 'bulb',
