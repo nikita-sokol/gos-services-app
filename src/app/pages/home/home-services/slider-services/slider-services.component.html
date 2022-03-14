@@ -19,8 +19,8 @@
             <div class="slide__text">{{slide.text}}</div>
           </div>
      
-          <div class="slide__img" *ngIf="slide.imgName" [class]="slide.imgClass ? 'slide__img_'+ slide.imgClass: ''">
-            <img [src]="'/assets/img/home_page/services/'+slide.imgName+'.svg'" alt="">
+          <div class="slide__img" *ngIf="slide.img" [class]="slide.imgClass ? 'slide__img_' + slide.imgClass: ''">
+            <img [src]="'/assets/img/home_page/services/'+slide.img+'.svg'" alt="">
           </div>
 
           <div class="slide__label" *ngIf="slide.label" [class]="slide.label.class ? 'slide__label_' + slide.label.class : ''">
@@ -28,7 +28,7 @@
             <a *ngFor="let link of slide.label.links" [href]="link.href" class="slide__link">{{link.text}}</a>
           </div>
      
-          <button class="btn btn_bgcolor_grey slide__btn">
+          <button class="btn btn_grey slide__btn">
             <span>{{slide.btnText}}</span>
           </button>
         </form>

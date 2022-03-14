@@ -8,20 +8,26 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SliderServicesComponent implements OnInit {
   @Input() slides: any;
   positionTrack = 0;
-  widthTrack: any;
-  widthContainer: any;
   widthSlide = 288;
   marginSlide = 16;
   minPositionTrack: any;
+
+  touch = false;
+  posCurInit = 0;
+  posCurX1 = 0;
+  posCurX2 = 0;
+  posTrackInit = 0;
+  transition = 'all .65s';
+
 
   constructor() { 
     
   }
 
   ngOnInit(): void {
-    this.widthTrack = (this.widthSlide + this.marginSlide) * this.slides.length - this.marginSlide;
-    this.widthContainer = (this.widthSlide + this.marginSlide) * 4 - this.marginSlide;
-    this.minPositionTrack = -(this.widthTrack - this.widthContainer);
+    const widthTrack = (this.widthSlide + this.marginSlide) * this.slides.length - this.marginSlide;
+    const widthContainer = (this.widthSlide + this.marginSlide) * 4 - this.marginSlide;
+    this.minPositionTrack = -(widthTrack - widthContainer);
   }
 
   chargeTrackPosition(mode: any) {
@@ -41,16 +47,6 @@ export class SliderServicesComponent implements OnInit {
       }
     }
   }
-
-  touch = false;
-  posCurInit = 0;
-  posCurX1 = 0;
-  posCurX2 = 0;
-  posTrackInit = 0;
-  posCurFinal = 0;
-  posUnits: any = '0px';
-  trfRegExp = /[-0-9.]+(?=px)/;
-  transition = 'all .65s';
 
   getEvent(event: any) {
     event.type.search('touch') !== -1 ? event.touches[0] : event
@@ -72,7 +68,7 @@ export class SliderServicesComponent implements OnInit {
     if (this.touch) {
       this.getEvent(event);
       this.posCurX2 = this.posCurX1 - event.clientX;
-      this.positionTrack = this.positionTrack - this.posCurX2;
+      this.positionTrack -= this.posCurX2;
       this.posCurX1 = event.clientX;
     }
   }
@@ -80,20 +76,22 @@ export class SliderServicesComponent implements OnInit {
   swipeEnd(event: any) {
     if (this.touch) {
       this.getEvent(event);
-      this.posCurFinal = this.posCurInit - event.clientX;
-      this.transition = 'all .65s';
-      
-      const numbValue = (this.posCurFinal > 0) ? -1 : 1;
-      const numSteps = -(Math.round(this.posCurFinal/(this.widthSlide + this.marginSlide)));
 
-      this.positionTrack = this.posTrackInit + numSteps * (this.widthSlide + this.marginSlide);
-      if (this.positionTrack < this.minPositionTrack) {
-        this.positionTrack = this.minPositionTrack;
-      }
-      if (this.positionTrack > 0) {
-        this.positionTrack = 0;
-      }
+      const moveSlide = () => {
+        const posCurFinal = this.posCurInit - event.clientX;
+        const numSteps = -(Math.round(posCurFinal/(this.widthSlide + this.marginSlide)));
+        this.positionTrack = this.posTrackInit + numSteps * (this.widthSlide + this.marginSlide);
       
+        if (this.positionTrack < this.minPositionTrack) {
+          this.positionTrack = this.minPositionTrack;
+        }
+        if (this.positionTrack > 0) {
+          this.positionTrack = 0;
+        }
+      }
+      moveSlide();
+      
+      this.transition = 'all .65s';
       this.touch = false;
     }
   }

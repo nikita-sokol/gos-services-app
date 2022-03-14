@@ -50,17 +50,17 @@ h5 {
       font-weight: inherit;
    }
    
-   &_bgcolor_transpar {
+   &_transparent {
       background: transparent;
       color: $scarlet;
       border: 1px solid $scarlet;
    }
-   &_bgcolor_scarlet {
+   &_scarlet {
       background: $scarlet;
       color: $white;
       border: 1px solid $scarlet;
    }
-   &_bgcolor_grey {
+   &_grey {
       background: #6986A6;
       color: $white;
       border: 1px solid #6986A6;

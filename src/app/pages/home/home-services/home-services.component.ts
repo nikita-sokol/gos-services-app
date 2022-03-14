@@ -10,13 +10,13 @@ export class HomeServicesComponent implements OnInit {
     {
       title: 'Узнать тип моей учетной записи ЕСИА',
       text: '',
-      imgName: 'gosuslugi',
+      img: 'gosuslugi',
       btnText: 'Проверить',
     },
     {
       title: 'Принадлежность автомобильных дорог',
       text: 'Узнайте информацию для получения технических требований и условий',
-      imgName: 'highways',
+      img: 'highways',
       label: {
         inputs: [
           {
@@ -30,7 +30,7 @@ export class HomeServicesComponent implements OnInit {
     {
       title: 'Проверка заявления в детский сад',
       text: '',
-      imgName: 'kindergarten',
+      img: 'kindergarten',
       btnText: 'Проверить',
     },
     {
@@ -67,55 +67,55 @@ export class HomeServicesComponent implements OnInit {
     {
       title: 'Медицинская карта',
       text: '',
-      imgName: 'medicine',
+      img: 'medicine',
       btnText: 'Проверить',
     },
     {
       title: 'проверка статуса очереди в 1 класс',
       text: '',
-      imgName: 'first-grade',
+      img: 'first-grade',
       btnText: 'проверить',
     },
     {
       title: 'Коммунальные платежи',
       text: '',
-      imgName: 'communal-pay',
+      img: 'communal-pay',
       btnText: 'передать информацию',
     },
     {
       title: 'Передача информации о водителях...',
       text: '',
-      imgName: 'driver',
+      img: 'driver',
       btnText: 'передать информацию',
     },
     {
       title: 'дистанционное консультирование',
       text: '',
-      imgName: 'consultation',
+      img: 'consultation',
       btnText: 'подробнее',
     },
     {
       title: 'Карта офисов мфц',
       text: '',
-      imgName: 'mfc-map',
+      img: 'mfc-map',
       btnText: 'перейти',
     },
     {
       title: 'Поиск пропавших людей',
       text: 'Сервис по поиску пропавших среди пациентов больниц Подмосковья',
-      imgName: 'people-search',
+      img: 'people-search',
       btnText: 'подробнее',
     },
     {
       title: 'Нам сверху все видно',
       text: 'Все стройки Подмосковья в твоем телефоне',
-      imgName: 'construction',
+      img: 'construction',
       btnText: 'записаться',
     },
     {
       title: 'Предзапись в МФЦ',
       text: '',
-      imgName: 'prerecording',
+      img: 'prerecording',
       btnText: 'записаться',
       label: {
         inputs: [
@@ -129,25 +129,25 @@ export class HomeServicesComponent implements OnInit {
     {
       title: 'Наличие ООПТ и их охранных зон, а также ...',
       text: 'Предоставление сведений о наличии особо охраняемых природных территорий и охраняемых видов растений и животных',
-      imgName: 'reserves',
+      img: 'reserves',
       btnText: 'получить сведения',
     },
     {
       title: 'Пересечение границ земельных участков',
       text: 'Получение сведений о пересечении с землями лесного фонда Московской области',
-      imgName: 'plots',
+      img: 'plots',
       btnText: 'получить сведения',
     },
     {
       title: 'государственный лесной реестр',
       text: 'Выписка из государственного лесного реестра',
-      imgName: 'maintenance',
+      img: 'maintenance',
       btnText: 'Получить выписку',
     },
     {
       title: 'государственный лесной реестр',
       text: 'Выписка из государственного лесного реестра',
-      imgName: 'maintenance',
+      img: 'maintenance',
       imgClass: 'small',
       btnText: 'Получить выписку',
       label: {
@@ -170,13 +170,13 @@ export class HomeServicesComponent implements OnInit {
     {
       title: 'запись на то',
       text: '',
-      imgName: 'record',
+      img: 'record',
       btnText: 'записаться',
     },
     {
       title: 'Вакцинация против covid-19',
       text: '',
-      imgName: 'vaccination',
+      img: 'vaccination',
       btnText: 'записаться',
     }
     
