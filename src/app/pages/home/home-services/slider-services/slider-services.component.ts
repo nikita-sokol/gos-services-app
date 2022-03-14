@@ -77,22 +77,19 @@ export class SliderServicesComponent implements OnInit {
     if (this.touch) {
       this.getEvent(event);
 
-      const moveSlide = () => {
-        const posCurFinal = this.posCurInit - event.clientX;
-        const numSteps = -(Math.round(posCurFinal/(this.widthSlide + this.marginSlide)));
-        this.positionTrack = this.posTrackInit + numSteps * (this.widthSlide + this.marginSlide);
-      
-        if (this.positionTrack < this.minPositionTrack) {
-          this.positionTrack = this.minPositionTrack;
-        }
-        if (this.positionTrack > 0) {
-          this.positionTrack = 0;
-        }
+      const posCurFinal = this.posCurInit - event.clientX;
+      const numSteps = -(Math.round(posCurFinal/(this.widthSlide + this.marginSlide)));
+      this.positionTrack = this.posTrackInit + numSteps * (this.widthSlide + this.marginSlide);
+    
+      if (this.positionTrack < this.minPositionTrack) {
+        this.positionTrack = this.minPositionTrack;
       }
-      moveSlide();
+      if (this.positionTrack > 0) {
+        this.positionTrack = 0;
+      }
       
-      this.transition = 'all .65s';
       this.touch = false;
+      this.transition = 'all .65s';
     }
   }
 }
