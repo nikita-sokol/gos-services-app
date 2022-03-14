@@ -118,90 +118,119 @@
 
    &_subsidy {
       background-color: #CBC9E2;
+      background-image: url('/assets/img/home_page/events-slider/slides/subsidy.svg');
    }
    &_social-navigator {
       background-color: #B5D2EC;
+      background-image: url('/assets/img/home_page/events-slider/slides/social-navigator.svg');
    }
    &_debts {
       background-color: #5D9FA6;
+      background-image: url('/assets/img/home_page/events-slider/slides/debts.svg');
    }
    &_orvi-symptoms {
       background-color: #C49589;
+      background-image: url('/assets/img/home_page/events-slider/slides/orvi-symptoms.svg');
    }
    &_stop-covid {
       background-color: #D8A6AD;
+      background-image: url('/assets/img/home_page/events-slider/slides/stop-covid.svg');
    }
    &_vaccine {
       background-color: #1C75AC;
+      background-image: url('/assets/img/home_page/events-slider/slides/vaccine.svg');
    }
    &_worker-info {
       background-color: #1C75AC;
+      background-image: url('/assets/img/home_page/events-slider/slides/worker-info.svg');
    }
    &_military-commissariat {
       background-color: #849B59;
+      background-image: url('/assets/img/home_page/events-slider/slides/military-commissariat.svg');
    }
    &_appeal {
       background-color: #2B5DC0;
+      background-image: url('/assets/img/home_page/events-slider/slides/appeal.svg');
    }
    &_technical-service {
       background-color: #A6D4DF;
+      background-image: url('/assets/img/home_page/events-slider/slides/technical-service.svg');
    }
    &_qr-code {
       background-color: #BED2FA;
+      background-image: url('/assets/img/home_page/events-slider/slides/qr-code.svg');
    }
    &_working-mode {
       background-color: #DBC3C5;
+      background-image: url('/assets/img/home_page/events-slider/slides/working-mode.svg');
    }
    &_electronic-signature {
       background-color: #68B182;
+      background-image: url('/assets/img/home_page/events-slider/slides/electronic-signature.svg');
    }
    &_doctor {
       background-color: #D5A39B;
+      background-image: url('/assets/img/home_page/events-slider/slides/doctor.svg');
    }
    &_school-portal {
       background-color: #88A1C3;
+      background-image: url('/assets/img/home_page/events-slider/slides/school-portal.svg');
    }
    &_self-employee {
       background-color: #A8A8A8;
+      background-image: url('/assets/img/home_page/events-slider/slides/self-employee.svg');
    }
    &_young-family {
       background-color: #82B8AF;
+      background-image: url('/assets/img/home_page/events-slider/slides/young-family.svg');
    }
    &_social-support {
       background-color: #D3C4E7;
+      background-image: url('/assets/img/home_page/events-slider/slides/social-support.svg');
    }
    &_suburbs {
       background-color: #A8D9B3;
+      background-image: url('/assets/img/home_page/events-slider/slides/suburbs.svg');
    }
    &_medical-staff {
       background-color: #98BBCD;
+      background-image: url('/assets/img/home_page/events-slider/slides/medical-staff.svg');
    }
    &_covid-testing {
       background-color: #E0C6A2;
+      background-image: url('/assets/img/home_page/events-slider/slides/covid-testing.svg');
    }
    &_mfc-work {
       background-color: #ECBF9A;
+      background-image: url('/assets/img/home_page/events-slider/slides/mfc-work.svg');
    }
    &_covid-facts {
       background-color: #B5D2EC;
+      background-image: url('/assets/img/home_page/events-slider/slides/covid-facts.svg');
    }
    &_esia {
       background-color: #178CA9;
+      background-image: url('/assets/img/home_page/events-slider/slides/esia.svg');
    }
    &_hot-tine {
       background-color: #BED2FA;
+      background-image: url('/assets/img/home_page/events-slider/slides/hot-tine.svg');
    }
    &_medical-work {
       background-color: #42D572;
+      background-image: url('/assets/img/home_page/events-slider/slides/medical-work.svg');
    }
    &_bankrupt {
       background-color: #DDCDC0;
+      background-image: url('/assets/img/home_page/events-slider/slides/bankrupt.svg');
    }
    &_gasification {
       background-color: #A7BAF5;
+      background-image: url('/assets/img/home_page/events-slider/slides/gasification.svg');
    }
    &_vaccination-appointment {
       background-color: #89D5C6;
+      background-image: url('/assets/img/home_page/events-slider/slides/vaccination-appointment.svg');
    }
 }
 
@@ -236,5 +265,6 @@
       &__text {
          display: none;
       }
+      background-image: none;
    }
 }
