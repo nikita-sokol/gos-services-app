@@ -10,30 +10,26 @@ export class SearchComponent implements OnInit, OnDestroy {
   @HostListener('window:resize') 
   onResize() {
     if (window.innerWidth <= 720) {
-      this.icSearch.bgPosition = 0;
-      this.icSearch.widthFrameElement = 60;
+      this.icSearch.position = 0;
+      this.icSearch.widthFrame = 60;
     } else {
-      this.icSearch.bgPosition = 0;
-      this.icSearch.widthFrameElement = 98;
+      this.icSearch.position = 0;
+      this.icSearch.widthFrame = 98;
     }
-    this.icSearch.bgMaxPosition = -this.icSearch.widthFrame/this.icSearch.framesNumber*this.icSearch.widthFrameElement + this.icSearch.widthFrameElement * 31;
+    this.icSearch.maxPosition = -this.icSearch.framesNumber*this.icSearch.widthFrame;
   }
 
   innerWidth: any;
 
   icSearch = {
-    widthImg: 18000,
-    widthFrame: 150,
-    widthFrameElement: 98,
-    bgPosition: 0,
-    bgMaxPosition: 0,
-    framesNumber: 0,
+    framesNumber: 119,
+    widthFrame: 98,
+    position: 0,
+    maxPosition: 0,
     duration: 26
   }
   
   rearchInterval: any;
-
-  framesNumber: number;
 
   searchHints = [ 
     {
@@ -53,15 +49,13 @@ export class SearchComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    this.icSearch.framesNumber  = this.icSearch.widthFrame/this.icSearch.widthFrame;
-    
     this.onResize();
 
     this.rearchInterval = setInterval(() => {
-      if (this.icSearch.bgPosition > this.icSearch.bgMaxPosition) {
-        this.icSearch.bgPosition -= this.icSearch.widthFrameElement;
+      if (this.icSearch.position <= this.icSearch.maxPosition) {
+        this.icSearch.position = 0;
       } else {
-        this.icSearch.bgPosition = 0;
+        this.icSearch.position -= this.icSearch.widthFrame;
       }
     }, this.icSearch.duration);
   }
